@@ -1,0 +1,144 @@
+/* Category */
+.category-title h2 {
+  text-align: center;
+  margin: auto;
+  color: black;
+  width: 100%;
+  max-width: 250px;
+  padding: 20px 40px;
+  border-radius: 30px;
+  background-color: white;
+  font-size: 1.5rem;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 10px;
+}
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+}
+.box-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.box-category:hover {
+  transform: scale(1.1);
+  background-color: #dcdcdc;
+  color: #000;
+}
+/* Product*/
+.TopProd,
+.dailyView {
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.TopProd {
+  background-color: orange;
+}
+.dailyView {
+  background-color: #2d4257;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 20px;
+}
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 220px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
+}
+.products a {
+  text-decoration: none;
+  color: black;
+}
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+.product-name {
+  font-weight: bold;
+  font-size: 16px;
+  min-height: 30px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  margin-top: 10px;
+}
+.price {
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  color: #a85a00;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.rating {
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  color: #c64d0c;
+  font-size: 13px;
+}
+.rating i {
+  margin-right: 2px;
+}
+
+@media (max-width: 768px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  h2 {
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .products {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  .product-card {
+    width: 48%;
+  }
+  .product-card img {
+    object-fit: fill;
+  }
+}

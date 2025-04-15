@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage - CozyCoCart</title>
+  <link rel="stylesheet" type="text/css" href="./css/default.css"> <!--link para sa nav at banner-->
+  <link rel="stylesheet" type="text/css" href="./css/homepage.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
+</head>
+<body>
+  <div class="con-wrapper"> 
+      <!--NAV-->
+      <header>
+
+        <nav>
+          <img src="./img/logo.jpg" alt="" id="logo"> 
+          <h2>CozyCoCart</h2>
+          <div class="search">
+            <input type="text" id="" placeholder="Search...">
+          </div>
+          <div class="nav-field">
+            <a href="./received-items.html" title="Cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <div class="nav-item" title="Notifications" id="notification">
+              <i class="fa-solid fa-bell"></i>
+              <div class="dropdown-noti" id="dropdown-noti">
+                <h4>Notifications</h4>
+                <hr>
+                <div class="noti">
+                  <p>"No new notifications at the moment."</p>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item" title="Profile" id="profiles">
+              <i class="fa-solid fa-circle-user user-profile"></i>
+              <div class="dropdown-profile" id="dropdown-profile">
+                <h4>Profile</h4>
+                <div class="profileNav">
+                  <div id="profile-nav">Profile</div>
+                  <div id="profile-logout">Logout</div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </nav>
+        <div class="topnav" id="myTopnav">
+          <a href="homepage.html" >Home</a>
+          <a href="category-page.html?category=men">Men</a>
+          <a href="category-page.html?category=women">Women</a>
+          <a href = "category-page.html?category=accessories">Accessories</a>
+          <div class="dropdown">
+            <button class="dropbtn">Others
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="category-page.html?category=gadgets" class="box-category">
+                Gadgets
+              </a>
+              <a href="category-page.html?category=matress" class="box-category">
+                  Mattress
+              </a>
+              <a href="category-page.html?category=daily-supplies" class="box-category">
+                  Daily Supplies
+              </a>
+              <a href="category-page.html?category=kidz-zone" class="box-category">
+                  Kidz Zone
+              </a>
+              <a href="category-page.html?category=home-living" class="box-category">
+                  Home & Living
+              </a>
+              <a href="category-page.html?category=essentials" class="box-category">
+                  Essentials
+              </a>
+     
+              <a href="login.html">Logout</a>
+            </div>     
+          </div>
+        </div>
+      </header>
+    <div class="container">
+      <!--BANNER-->
+      <div class="banner">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="./img/bg3.jpg" style="width: 100%" />
+          <div class="text">Caption text</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="./img/template/banner.jpg" style="width: 100%" />
+          <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="img/bg1.webp" style="width: 100%" />
+          <div class="text">Caption Three</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <div class="banner-text">
+        <br />
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+      </div>
+          <!--Categories-->
+          <div class="categories">
+            <div class="category-title">
+                <h2>Categories</h2>  
+            </div> <br>
+            <div class="category-container">
+                <a href="category-page.html?category=men" class="box-category">
+                    <i class="fa-solid fa-shirt"></i>
+                    <h4>Men</h4>
+                </a>
+                <a href="category-page.html?category=women" class="box-category">
+                    <i class="fa-solid fa-person-dress" style="font-size: 20px;"></i>
+                    <h4>Women</h4>
+                </a>
+                <a href="category-page.html?category=accessories" class="box-category">
+                    <i class="fa-solid fa-ring"></i>
+                    <h4>Accessories</h4>
+                </a>
+                <a href="category-page.html?category=matress" class="box-category">
+                    <i class="fa-solid fa-bed"></i>
+                    <h4>Mattress</h4>
+                </a>
+                <a href="category-page.html?category=daily-supplies" class="box-category">
+                    <i class="fa-solid fa-box"></i>
+                    <h4>Daily Supplies</h4>
+                </a>
+                <a href="category-page.html?category=kidz-zone" class="box-category">
+                    <i class="fa-solid fa-child" style="font-size: 20px;"></i>
+                    <h4>Kidz Zone</h4>
+                </a>
+                <a href="category-page.html?category=home-living" class="box-category">
+                    <i class="fa-solid fa-couch"></i>
+                    <h4>Home & Living</h4>
+                </a>
+                <a href="category-page.html?category=essentials" class="box-category">
+                    <i class="fa-solid fa-heart"></i>
+                    <h4>Essentials</h4>
+                </a>
+            </div>
+        </div>
+            <!--Top Product--> 
+            <div class="TopProd">
+                <div class="category-title">
+                    <h2 >Top Products</h2>  
+                  </div> <br><br>
+              <div class="products" id="top-products"></div>
+              </div>
+       
+            <div class="dailyView">
+                <div class="category-title">
+                    <h2 >Daily Views</h2>  
+                  </div> <br><br>
+              <div class="products" id="daily-view"></div>
+           </div>
+  </div>
+           <footer>
+            <div class="footer-section" id="info">
+                <img src="./img/logo.jpg" alt="Cara Logo" style="height: 40px; margin-bottom: 10px; border-radius: 50px;">
+                <p>Contact: Legarda St., Manila <br> +09838740984 <br> 8:00am - 6:00pm Mon-Sat</p>
+              
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Info</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Account</h3>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Account</a>
+                <a href="#">Wishlist</a>
+                <a href="#">Track Order</a>
+            </div>
+            <div class="footer-section">
+                <h3>Payment</h3>
+                <div class="payment-icons">
+                    <img src="./img/others/gcash.jpg" alt="GCash" style="height: 25px; margin-right: 5px;">
+                    <img src="./img/others/paypal.png" alt="PayPal" style="height: 25px; margin-right: 5px;">
+                    <img src="./img/others/visa.png" alt="Visa" style="height: 25px; margin-right: 5px;">
+                    <img src="./img/others/bdo.png" alt="bdo" style="height: 25px; margin-right: 5px;">
+                </div>
+                <p>Secure Payments</p>
+            </div>
+            <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
+        </footer>
+</body>
+<script src="./js/nav-banner.js"></script>
+<script type="module" src="./js/homepage.js"></script>
+<script src="./js/default.js"></script>
+</html>

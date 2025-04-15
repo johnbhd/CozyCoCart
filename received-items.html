@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Orders - CozyCoCart</title>
+  <link rel="stylesheet" type="text/css" href="./css/default.css"> <!--link para sa nav at banner-->
+  <link rel="stylesheet" type="text/css" href="./css/receive-items.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
+
+</head>
+<style>
+</style> 
+<body>
+  <div class="con-wrapper"> 
+      <!--NAV-->
+      <header>
+
+        <nav>
+          <img src="./img/logo.jpg" alt="" id="logo"> 
+          <h2>CozyCoCart</h2>
+          <div class="search">
+            <input type="text" id="" placeholder="Search...">
+          </div>
+          <div class="nav-field">
+            <a href="./received-items.html" title="Cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <div class="nav-item" title="Notifications" id="notification">
+              <i class="fa-solid fa-bell"></i>
+              <div class="dropdown-noti" id="dropdown-noti">
+                <h4>Notifications</h4>
+                <hr>
+                <div class="noti">
+                  <p>"No new notifications at the moment."</p>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item" title="Profile" id="profiles">
+              <i class="fa-solid fa-circle-user user-profile"></i>
+              <div class="dropdown-profile" id="dropdown-profile">
+                <h4>Profile</h4>
+                <div class="profileNav">
+                  <p id="profileName"></p>
+                  <div id="profile-nav">Profile</div>
+                  <div id="profile-logout">Logout</div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </nav>
+        <div class="topnav" id="myTopnav">
+          <a href="homepage.html" >Home</a>
+          <a href="category-page.html?category=men">Men</a>
+          <a href="category-page.html?category=women">Women</a>
+          <a href = "category-page.html?category=accessories">Accessories</a>
+          <div class="dropdown">
+            <button class="dropbtn">Others
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="category-page.html?category=gadgets" class="box-category">
+                Gadgets
+              </a>
+              <a href="category-page.html?category=matress" class="box-category">
+                  Mattress
+              </a>
+              <a href="category-page.html?category=daily-supplies" class="box-category">
+                  Daily Supplies
+              </a>
+              <a href="category-page.html?category=kidz-zone" class="box-category">
+                  Kidz Zone
+              </a>
+              <a href="category-page.html?category=home-living" class="box-category">
+                  Home & Living
+              </a>
+              <a href="category-page.html?category=essentials" class="box-category">
+                  Essentials
+              </a>
+     
+              <a href="login.html">Logout</a>
+            </div>     
+          </div>
+        </div>
+      </header>
+    <!--Your Orders--> 
+    <div class="your-orders">
+       <!-- Optional icon -->
+      <div class="headerOrder">
+      </div>
+      <br><hr>
+      <div class="orders-header">
+        <div class="rows current" onclick="showSection('orders', this)">
+          <i class="fa-solid fa-book"></i>
+          <h4>Orders</h4>
+        </div>
+        <div class="rows" onclick="showSection('cart', this)">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <h4>Cart</h4>
+        </div>
+        <div class="rows" onclick="showSection('wallet', this)">
+          <i class="fa-solid fa-wallet"></i>
+          <h4>Wallet</h4>
+        </div>
+        <div class="rows" onclick="showSection('Profile', this)">
+          <i class="fa-solid fa-circle-user " style="font-size: 1.6rem;"></i>
+          <h4>Profile</h4>
+        </div>
+      </div>
+    </div>
+  <!-- Orders Section -->
+  <div id="orders" class="section current">
+    <div class="orderUser">
+
+    </div>
+
+  </div>
+  <!-- Cart Section -->
+  <div id="cart" class="section ">
+    <div class="cart-sec">
+        <div class="cart-header">
+          <h2>Shopping Cart</h2>
+          <p>Edit</p>
+        </div>
+        <div class="cart-product">
+
+        </div>
+    </div>
+  </div>
+
+  <!-- Wallet -->
+  <div id="wallet" class="section">
+    <div class="wallet-sec">
+      <div class="wallet-card">
+        <div class="wallet-icon">💵</div>
+        <div class="wallet-title">Balance</div>
+        <div class="wallet-balance" id="wallet-balance"></div>
+        <button class="wallet-button" onclick="addFunds()">Add $50</button>
+      </div>
+    
+      <div class="wallet-card">
+        <div class="wallet-icon wallet-icon-gcash">📱</div>
+        <div class="wallet-title">Pay with G-Wallet</div>
+        <div class="wallet-description">Use G-Wallet to add funds or pay for your purchases securely.</div>
+        <button class="wallet-button wallet-button-outline" onclick="payWithGcash()">Connect GCash</button>
+      </div>
+    </div>
+  </div>
+  <!-- Profile -->
+  <div id="Profile" class="section">
+    <div class="profile-sec">
+      <h4>Profile</h4>
+      <form>
+        <label>Full Name:</label>
+        <input type="text" placeholder="John Doe">
+        <label>Contact Number:</label>
+        <input type="number" placeholder="+63 912 345 6759"><br>
+        <label>Address:</label>
+        <textarea id="" placeholder="123 Barangay Street, City, Provice, ZIP"></textarea>
+        <button>Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+    </div>
+    <footer>
+      <div class="footer-section" id="info">
+          <img src="./img/logo.jpg" alt="Cara Logo" style="height: 40px; margin-bottom: 10px; border-radius: 50px;">
+          <p>Contact: Legarda St., Manila <br> +09838740984 <br> 8:00am - 6:00pm Mon-Sat</p>
+        
+      </div>
+      <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#">About Us</a>
+          <a href="#">Delivery Info</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-section">
+          <h3>Account</h3>
+          <a href="#">Sign In</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Account</a>
+          <a href="#">Wishlist</a>
+          <a href="#">Track Order</a>
+      </div>
+      <div class="footer-section">
+          <h3>Payment</h3>
+          <div class="payment-icons">
+              <img src="./img/others/gcash.jpg" alt="GCash" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/paypal.png" alt="PayPal" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/visa.png" alt="Visa" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/bdo.png" alt="bdo" style="height: 25px; margin-right: 5px;">
+          </div>
+          <p>Secure Payments</p>
+      </div>
+      <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
+  </footer>
+</body>
+<script type="module" src="./js/yours-order.js"></script>
+<script src="./js/default.js"></script>
+</html>

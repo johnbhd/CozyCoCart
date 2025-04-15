@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title> 
+  <link rel="stylesheet" href="./css/admin.css">
+  <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+          <img src="./img/logo.jpg" alt="Logo" class="logo">
+          <span>Admin Dashboard</span>
+        </div>
+        <div class="logout-link"><i class="fa-solid fa-right-from-bracket"></i></div>
+      </header>
+      
+      
+  <div class="dashboard-stats">
+    <div class="stat-box">
+      <h2 id="userData">0</h2>
+      <p>Users</p>
+    </div>
+    <div class="stat-box">
+      <h2 id="OrderData">0</h2>
+      <p>Orders</p>
+    </div>
+    <div class="stat-box">
+      <h2 id="productData">0</h2>
+      <p>Products</p>
+    </div>
+    <div class="stat-box">
+      <h2 id="requestData">0</h2>
+      <p>Money Requests</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="section">
+      <h3>Users</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>User ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Address</th>
+              <th>Money</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Orders</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Order ID</th>
+              <th>Product</th>
+              <th>Color</th>
+              <th>Size</th>
+              <th>Qty</th>
+              <th>Total</th>
+              <th>Payment</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="orderTableBody">
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>User Money Requests</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Request ID</th>
+              <th>User ID</th>
+              <th>Username</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>REQ001</td>
+              <td>1678901000000</td>
+              <td>user</td>
+              <td>₱500</td>
+              <td>
+                <select>
+                  <option>Pending</option>
+                  <option>Processing</option>
+                  <option>Shipped</option>
+                  <option>Delivered</option>
+                  <option>Cancelled</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script type="module" src="./js/admin.js"></script>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basket Page - CozyCoCart</title>
+  <link rel="stylesheet" type="text/css" href="./css/default.css"> <!--link para sa nav at banner-->
+  <link rel="stylesheet" type="text/css" href="./css/basket-page.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
+
+</head>
+<style>
+
+</style> 
+<body>
+  <div class="con-wrapper"> 
+     <!--NAV-->
+     <header>
+
+      <nav>
+        <img src="./img/logo.jpg" alt="" id="logo"> 
+        <h2>CozyCoCart</h2>
+        <div class="search">
+          <input type="text" id="" placeholder="Search...">
+        </div>
+        <div class="nav-field">
+          <a href="./received-items.html" title="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <div class="nav-item" title="Notifications" id="notification">
+            <i class="fa-solid fa-bell"></i>
+            <div class="dropdown-noti" id="dropdown-noti">
+              <h4>Notifications</h4>
+              <hr>
+              <div class="noti">
+                <p>"No new notifications at the moment."</p>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item" title="Profile" id="profiles">
+            <i class="fa-solid fa-circle-user user-profile"></i>
+            <div class="dropdown-profile" id="dropdown-profile">
+              <h4>Profile</h4>
+              <div class="profileNav">
+                <div id="profile-nav">Profile</div>
+                <div id="profile-logout">Logout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </nav>
+      <div class="topnav" id="myTopnav">
+        <a href="homepage.html" >Home</a>
+        <a href="category-page.html?category=men">Men</a>
+        <a href="category-page.html?category=women">Women</a>
+        <a href = "category-page.html?category=accessories">Accessories</a>
+        <div class="dropdown">
+          <button class="dropbtn">Others
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="category-page.html?category=gadgets" class="box-category">
+              Gadgets
+            </a>
+            <a href="category-page.html?category=matress" class="box-category">
+                Mattress
+            </a>
+            <a href="category-page.html?category=daily-supplies" class="box-category">
+                Daily Supplies
+            </a>
+            <a href="category-page.html?category=kidz-zone" class="box-category">
+                Kidz Zone
+            </a>
+            <a href="category-page.html?category=home-living" class="box-category">
+                Home & Living
+            </a>
+            <a href="category-page.html?category=essentials" class="box-category">
+                Essentials
+            </a>
+   
+            <a href="login.html">Logout</a>
+          </div>     
+        </div>
+      </div>
+    </header>
+    <!--Product Info--> <br><br>
+    <div class="conProductInfo">
+   
+        <div class="prodDetail">
+            <div class="prodInfo">
+              <div class="fields">
+
+                <div class="prodimg">
+                  <div class="prodimgDisplay" id="ProductImgMain">
+                  </div>
+                </div>
+                <div class="prodimgInfo">
+                  <h2 id="ProductNameInfo"></h2><br>
+                  <p id="Arrival"><br>
+                  <div class="rate-sold">
+                    <p id="ProductRating"> rating</p>
+                    <p id="ProductSold"></p>
+                  </div><br>
+           
+                  <div class="fieldProd">
+                   
+                    <div class="row">
+                      <span class="label">Colors</span>
+                      <div class="colors">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span class="label">Size</span>
+                      <div class="size">
+                                          
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span class="label">Quantity</span>
+                      <div class="quantity">
+                        <button id="qty-decrease">−</button>
+                        <input type="number" id="qty" min="1" >
+                        <button id="qty-increase">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="payment">
+                <h2>Order Summary</h2>
+                <div class="payment-summary">
+         
+                  </div>
+                </div>
+              </div>
+              <div class="delivery-payment">
+                <div class="userInfo">
+                    <h2>Delivery & Payment</h2>
+                    <label>Full Name:</label>
+                    <input type="text" placeholder="John Doe" id="fullnameAdds">
+                    <label>Contact Number:</label>
+                    <input type="number" placeholder="+63 912 345 6759" id="numAdds"><br>
+                    <label>Address:</label>
+                    <textarea id="addressAdds" placeholder="123 Barangay Street, City, Provice, ZIP"></textarea>
+                  </div>
+                  <div class="payment-field">
+                    <h2>Select payment method</h2>
+                    <div class="option-payment">
+                      <div class="option-payment-choice">
+                        <h4>G-Wallet</h4>
+                        <input type="radio" name="payment-method" value="Gcashing e-Wallet">
+                      </div>
+                      <div class="option-payment-choice">
+                        <h4>Cash on Delivery</h4>
+                        <input type="radio" name="payment-method" value="Cash on Delivery">
+                      </div>
+                  
+                      <button id="place-order">Place Order</button>      
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+              
+          <div id="simpleModal" class="modal">
+            <div class="modal-content">
+                <div class="headModal">
+                  <div class="GcashingIntro">
+                     <img src="./img/others/logo.png" alt="">
+                     <h4>G-Wallet</h4>
+                    <div class="loading-circle"></div>
+                  </div>
+                  <div class="GcashingMain">
+                    <div class="main-head-gcashing">
+                      <img src="./img/others/logo.png" alt="">
+                      <h4>G-Wallet</h4>
+                    </div>
+                    <i class="fa-solid fa-xmark xmark"></i>
+                    <div class="main-body-gcashing">
+                      <div class="row-main">
+                        <h6>Number:</h6>
+                        <p>09734837</p>
+                      </div>
+                      <div class="row-main">
+                        <h6>E wallet:</h6>
+                        <p id="ewallet"></p>
+                      </div>
+                      <div class="row-main">
+                        <h6>Amount:</h6>
+                        <p class="Amount"></p>
+                      </div>
+                      
+                      <hr>
+                      <div class="row-main">
+                        <h6>Total Amount to Pay:</h6>
+                        <p class="Amount"></p>
+                      </div>
+                      <button id="gcashbut"></button>
+                    </div>
+                  </div>
+           
+                </div>
+            </div>
+            </div>
+          </div><br><br>
+          <footer>
+            <div class="footer-section" id="info">
+          <img src="./img/logo.jpg" alt="Cara Logo" style="height: 40px; margin-bottom: 10px; border-radius: 50px;">
+          <p>Contact: Legarda St., Manila <br> +09838740984 <br> 8:00am - 6:00pm Mon-Sat</p>
+        
+      </div>
+      <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#">About Us</a>
+          <a href="#">Delivery Info</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-section">
+          <h3>Account</h3>
+          <a href="#">Sign In</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Account</a>
+          <a href="#">Wishlist</a>
+          <a href="#">Track Order</a>
+      </div>
+      <div class="footer-section">
+          <h3>Payment</h3>
+          <div class="payment-icons">
+              <img src="./img/others/gcash.jpg" alt="GCash" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/paypal.png" alt="PayPal" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/visa.png" alt="Visa" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/bdo.png" alt="bdo" style="height: 25px; margin-right: 5px;">
+          </div>
+          <p>Secure Payments</p>
+      </div>
+      <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
+  </footer>
+</body>
+
+<script type="module" src="./js/payment.js"></script>
+<script src="./js/default.js"></script>
+</html>

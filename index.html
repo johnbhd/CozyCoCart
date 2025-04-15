@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - CozyCoCart</title>
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <img
+          src="./img/logo.jpg"
+          style="width: 80px; border-radius: 50px; margin: auto"
+          alt="CozyCoCart Logo"
+        />
+        <h2>CozyCoCart</h2>
+        <form id="LoginForm" class="loginField">
+          <input type="email" placeholder="Email or Phone Number" id="emailLogs" required />
+          <input type="password" placeholder="Enter Password" id="passwordLogs" required />
+          <button type="submit" class="btn" onclick="Login(event)">
+            Login
+          </button>
+        </form>
+        <p>Or</p>
+  
+        <button class="social-btn google" id="google-login-btn">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo" />
+          Continue with Google
+        </button>
+  
+        <p style="margin-top: 10px;">
+          Don't have an account?
+          <span id="signup"><u>Sign Up</u></span>
+        </p>
+      </div>
+      <div class="signup">
+        <img
+          src="./img/logo.jpg"
+          style="width: 80px; border-radius: 50px; margin: auto"
+          alt="CozyCoCart Logo"
+        />
+        <h2>Sign Up - CozyCoCart</h2>
+        <form id="SignupForm" class="signupField">
+          <input type="text" placeholder="Username" id="username" required />
+          <input type="email" placeholder="Email or Phone Number" id="email" required />
+          <input type="password" placeholder="Create Password" id="password" required />
+          <button type="submit" class="btn" onclick="SignUp()">
+            Sign Up
+          </button>
+        </form>  
+        <p>Or</p>
+        <button class="social-btn google" id="google-login-btn">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo" />
+          Continue with Google
+        </button>
+  
+
+        <p style="margin-top: 10px;">
+          Already have an account?
+          <span id="login"><u>Login</u></span>
+        </p>
+      </div>
+      
+      <div id="google-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo" />
+
+            oogle Login Unavailable
+          </div>
+          <div class="modal-message">
+            We are sorry, but Google login is currently unavailable. Please try again later.
+          </div>
+          <button class="modal-button" id="close-modal">Okay</button>
+        </div>
+      </div>
+
+    </div>
+  </body>
+<script src="./js/auth.js"></script>
+</html>

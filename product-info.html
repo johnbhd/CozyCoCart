@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Info - CozyCoCart</title>
+  <link rel="stylesheet" type="text/css" href="./css/default.css"> <!--link para sa nav at banner-->
+  <link rel="stylesheet" type="text/css" href="./css/product-info.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
+
+</head>
+<style>
+
+</style> 
+<body>
+  <div class="con-wrapper"> 
+       <!--NAV-->
+       <header>
+
+        <nav>
+          <img src="./img/logo.jpg" alt="" id="logo"> 
+          <h2>CozyCoCart</h2>
+          <div class="search">
+            <input type="text" id="" placeholder="Search...">
+          </div>
+          <div class="nav-field">
+            <a href="./received-items.html" title="Cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <div class="nav-item" title="Notifications" id="notification">
+              <i class="fa-solid fa-bell"></i>
+              <div class="dropdown-noti" id="dropdown-noti">
+                <h4>Notifications</h4>
+                <hr>
+                <div class="noti">
+                  <p>"No new notifications at the moment."</p>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item" title="Profile" id="profiles">
+              <i class="fa-solid fa-circle-user user-profile"></i>
+              <div class="dropdown-profile" id="dropdown-profile">
+                <h4>Profile</h4>
+                <div class="profileNav">
+                  <div id="profile-nav">Profile</div>
+                  <div id="profile-logout">Logout</div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </nav>
+        <div class="topnav" id="myTopnav">
+          <a href="homepage.html" >Home</a>
+          <a href="category-page.html?category=men">Men</a>
+          <a href="category-page.html?category=women">Women</a>
+          <a href = "category-page.html?category=accessories">Accessories</a>
+          <div class="dropdown">
+            <button class="dropbtn">Others
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="category-page.html?category=gadgets" class="box-category">
+                Gadgets
+              </a>
+              <a href="category-page.html?category=matress" class="box-category">
+                  Mattress
+              </a>
+              <a href="category-page.html?category=daily-supplies" class="box-category">
+                  Daily Supplies
+              </a>
+              <a href="category-page.html?category=kidz-zone" class="box-category">
+                  Kidz Zone
+              </a>
+              <a href="category-page.html?category=home-living" class="box-category">
+                  Home & Living
+              </a>
+              <a href="category-page.html?category=essentials" class="box-category">
+                  Essentials
+              </a>
+     
+              <a href="login.html">Logout</a>
+            </div>     
+          </div>
+        </div>
+      </header>
+    <!--Product Info--> <br><br>
+    <div class="conProductInfo">
+   
+        <div class="prodDetail">
+            <div class="prodInfo">  
+              <div class="prodimg">
+                <div class="prodimgDisplay" id="ProductImgMain">
+                </div>
+                <div class="prodimgChoice">
+                  <img src="./img/cloth-men/hoodie.png" alt="">
+                  <img src="./img/cloth-men/hoodie.png" alt="">
+                  <img src="./img/cloth-men/hoodie.png" alt="">
+                  <img src="./img/cloth-men/hoodie.png" alt="">
+                  
+                </div>
+                <div class="shares">
+                  <div class="shareSocmed">
+                    Shares: 
+                    <i class="fa-brands fa-facebook"></i>  
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-instagram"></i>  
+                    <i class="fa-brands fa-facebook-messenger"></i>  
+                  </div>
+                  <div class="shareLike">
+                    <i class="fa-solid fa-heart"></i>
+                    <p>Wishlist (1.3k)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="prodimgInfo">
+                <h2 id="ProductNameInfo"></h2>
+                <div class="rate-sold">
+                  <div class="stary">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <p id="ProductRating"></p>
+                  <p id="ProductSold"></p>
+                </div>
+                <h4 id="pricy"></h4><br>
+                <div class="discount">
+                  <p>20% off for new users</p>
+                </div><br>
+                <div class="fieldProd">
+                  <div class="row">
+                    <span class="label">Add-On</span>
+                    <span>Add-On Deals</span>
+                  </div>
+            
+                  <div class="row">
+                    <span class="label">Shipping</span>
+                    <span id="ship">
+                        <p>Shipping Fee ₱35</p>
+                    </span>
+                  </div>
+                  <div class="row">
+                    <span class="label">Colors</span>
+                    <div class="colors">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <span class="label">Size</span>
+                    <div class="size">
+                       
+                    </div>
+                  </div>
+                  <div class="row">
+                    <span class="label">Quantity</span>
+                    <div class="quantity">
+                      <button id="qty-decrease">−</button>
+                      <input type="number" id="qty" min="1" value="1">
+                      <button id="qty-increase">+</button>
+                    </div>
+                  </div>
+                  <div class="buy-cart">
+                    <button id="buy-now" >Buy Now</button>
+                    <button id="add-cart" >Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="prodDesRating">
+              <div class="prodRating">
+                <h4>Product Rating</h4><br>
+                <p><span id="pricyy"></span> of 5</p>
+                <div class="starrs">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div> <br>
+                <div class="ratebut">
+                  <button>All</button>                      
+                  <button>5 Star</button>                      
+                  <button>4 Star</button>                      
+                  <button>3 Star</button>                
+                                       
+                </div>
+                <div class="ratebut">
+                  <button>2 Star</button>                      
+                  <button>1 Star</button> 
+                </div><br>
+                <div class="comments">
+                  <pre>With comments      With Media</pre>
+                </div>
+              </div>
+              <div class="prodDescription">
+                <div class="row">
+                  <span class="label">Materials</span>
+                  <span>Cotton</span>
+                </div>
+                <div class="row">
+                  <span class="label">Short Sleeves</span>
+                  <span>Cotton</span>      
+                </div>
+                <div class="row">
+                  <span class="label">Patterns</span>
+                  <span>None</span>    
+                </div>
+                <div class="row">
+                  <span class="label">Stocks</span>
+                  <span id="soldy">128</span>    
+                </div>
+
+                <div class="descrip">
+                  Product Description
+                </div>
+                  <p id="descrip">
+                    Classic Men's Hoodie Stay cozy and stylish with this soft, breathable hoodie. Perfect for casual wear, it features a comfortable fit, durable fabric, and a sleek design. Available in multiple colors and sizes.
+                  </p>                
+              </div>
+            </div>
+        </div>
+    </div><br><br>
+    </div>
+    <footer>
+      <div class="footer-section" id="info">
+          <img src="./img/logo.jpg" alt="Cara Logo" style="height: 40px; margin-bottom: 10px; border-radius: 50px;">
+          <p>Contact: Legarda St., Manila <br> +09838740984 <br> 8:00am - 6:00pm Mon-Sat</p>
+        
+      </div>
+      <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#">About Us</a>
+          <a href="#">Delivery Info</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-section">
+          <h3>Account</h3>
+          <a href="#">Sign In</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Account</a>
+          <a href="#">Wishlist</a>
+          <a href="#">Track Order</a>
+      </div>
+      <div class="footer-section">
+          <h3>Payment</h3>
+          <div class="payment-icons">
+              <img src="./img/others/gcash.jpg" alt="GCash" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/paypal.png" alt="PayPal" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/visa.png" alt="Visa" style="height: 25px; margin-right: 5px;">
+              <img src="./img/others/bdo.png" alt="bdo" style="height: 25px; margin-right: 5px;">
+          </div>
+          <p>Secure Payments</p>
+      </div>
+      <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
+  </footer>
+</body>
+<script type="module" src="./js/SelectOrder.js"></script>
+<script src="./js/default.js"></script>
+</html>

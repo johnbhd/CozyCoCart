@@ -1,0 +1,246 @@
+/*new*/
+.conProductInfo {
+  margin: 20px;
+}
+/* Img Prod */
+.prodInfo {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 20px;
+}
+.prodimgDisplay img {
+  width: 300px;
+}
+.prodimgDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prodimgDisplay,
+.prodimgChoice {
+  cursor: pointer;
+}
+.prodimgChoice img {
+  max-width: 90px;
+  width: 100%;
+  height: auto;
+}
+.prodimgChoice {
+  display: flex;
+  justify-content: center;
+}
+.shares {
+  display: flex;
+  background-color: aliceblue;
+  padding: 5px;
+  border-radius: 50px;
+  margin-top: 5px;
+  justify-content: space-around;
+}
+.shareLike {
+  display: flex;
+  gap: 5px;
+}
+
+/* Prod INfo */
+
+.prodimgInfo {
+  flex: 1;
+}
+.prodimgInfo h2 {
+  font-size: 1.9rem;
+}
+.rate-sold {
+  display: flex;
+  gap: 20px;
+  margin: 10px 20px;
+}
+#pricy {
+  font-size: 2rem;
+  margin: 30px 0px 10px 20px;
+}
+.discount {
+  background-color: gray;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+}
+.row {
+  display: flex;
+  gap: 20px;
+  padding: 8px 0;
+  margin-left: 20px;
+}
+.buy-cart {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 0px 20px;
+  margin-top: 20px;
+}
+.buy-cart button {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+#buy-now {
+  border: 2px solid #f7b100;
+  background-color: transparent;
+  color: #f7b100;
+  font-weight: 500;
+}
+#add-cart {
+  background-color: #f7b100;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+.label {
+  font-weight: bold;
+  width: 30%;
+}
+.colors,
+.size {
+  display: flex;
+  gap: 10px;
+}
+
+.color-option {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border: 1px solid #000;
+  transition: all 0.3s ease;
+  display: inline-block; 
+}
+.color-option:hover {
+  opacity: 90%;
+}
+.color-option.selected {
+  border: 2px solid #000;
+  transform: scale(1.2);
+}
+.size button {
+  padding: 3px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block; 
+}
+.size button.selected {
+  border: 2px solid #000;
+  transform: scale(1.2);
+}
+
+.size button:hover {
+  background-color: #ff5722;
+  border-color: #ff5722;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quantity button {
+  background-color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.quantity input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Product Rating and Description */
+
+.prodDesRating {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+}
+.prodRating {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 20px;
+  gap: 5px;
+}
+.prodRating h4 {
+  font-size: 1.5rem;
+}
+.prodRating p {
+  font-size: 2.2rem;
+}
+.ratebut {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 5px;
+}
+.ratebut button {
+  width: 90px;
+  padding: 5px;
+}
+.comments {
+  font-size: 15px;
+}
+
+.prodDescription {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+}
+.descrip {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: bisque;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+#descrip {
+  margin: 20px;
+}
