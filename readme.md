@@ -21,9 +21,10 @@
 ## 🧰 Tech Stack
 
 - HTML5
-- CSS3 (Flexbox & Grid)
+- CSS3 (UI Design)
 - JavaScript (ES6+)
 - LocalStorage for data persistence
+- FontAwesome Icons
 
 ---
 
@@ -87,7 +88,7 @@ Just open `index.html` in your browser, or use a live server extension for bette
 
 ## 🙌 Author
 
-Made with 🧡 by [CozyCoCart](https://github.com/johnbhd/CozyCoCart)
+Created with 🤍 by the three founders of CozyCoCart.
 
 ---
 
