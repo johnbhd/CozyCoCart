@@ -3,28 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Product Info - CozyCoCart</title>
+
+  <title>Product Details - CozyCoCart</title>
+
+  <meta name="description" content="View product details at CozyCoCart. Check pricing, availability, sizes, and features of our cozy fashion and lifestyle products.">
+  <meta name="keywords" content="product details, CozyCoCart products, fashion product info, shop online, cozy clothing, cozy accessories, home living items">
+  <meta name="author" content="CozyCoCart Team">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Product Details - CozyCoCart">
+  <meta property="og:description" content="Learn more about this product on CozyCoCart. From fashion to home essentials, we've got you covered.">
+  <meta property="og:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+  <meta property="og:url" content="https://cozycocart.vercel.app/product-info.html">
+  <meta property="og:type" content="product">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Info - CozyCoCart">
+  <meta name="twitter:description" content="Check product specs, prices, and availability. Shop your cozy essentials with us.">
+  <meta name="twitter:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+
   <link rel="stylesheet" type="text/css" href="./css/default.css"> <!--link para sa nav at banner-->
   <link rel="stylesheet" type="text/css" href="./css/product-info.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
 
+    <!-- Structured Data (JSON-LD) for Product Details -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Cozy Hoodie",
+        "image": [
+          "https://cozycocart.vercel.app/img/hoodie.jpg"
+        ],
+        "description": "A soft, cozy hoodie perfect for any season.",
+        "brand": {
+          "@type": "Brand",
+          "name": "CozyCoCart"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://cozycocart.vercel.app/product-info.html",
+          "priceCurrency": "PHP",
+          "price": "999.00",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+      </script>
 </head>
 <style>
 
 </style> 
 <body>
   <div class="con-wrapper"> 
-       <!--NAV-->
-       <header>
+     <!--NAV-->
+     <header>
+        
+      <nav class="searnav" id="searnav">
+        <img src="./img/logo.jpg" alt="" id="logo"> 
+        <div class="search">
+          <input type="text" class="search-input" placeholder="Search...">
+          <i class="fa-solid fa-xmark search-btn" id="searchClose"></i>
+          <ul class="suggestions"></ul>
+        </div>
+      </nav>
+      <nav class="navi" id="navi">
+        <div class="logos" id="buti">
+          <img src="./img/logo.jpg" alt="logo" id="logo">
+        </div>
+        <div id="overlay"></div>
 
-        <nav>
-          <img src="./img/logo.jpg" alt="" id="logo"> 
+        <div id="popup" role="dialog" aria-modal="true">
+          <div class="popDiv">
+            <img src="./img/logo.jpg" alt="CozyCoCart Logo" id="logos">
+        
+            <h2 class="brand-title">CozyCoCart</h2>
+            <p class="brand-description">
+              <b>CozyCoCart</b> is a simple and cozy eCommerce platform that provides a seamless shopping experience with intuitive cart management and efficient product and order management. Designed for small-to-medium-sized businesses, it offers a lightweight, easy-to-use solution that creates a comfortable and inviting shopping journey for every user.
+            </p>
+        
+            <h3 class="founder-title">Founder</h3>
+            <div class="founder-section">
+              <div class="founder-card">
+                <img src="./img/others/profile.jfif" alt="Founder JB">
+                <h4>JB</h4>
+                <p>"At CozyCoCart, we focus on building simplicity and comfort in every cart, making the shopping process cozy, easy, and enjoyable!"</p>
+              </div>
+              <div class="founder-card">
+                <img src="./img/others/profile.jfif" alt="Founder Francis">
+                <h4>Francis</h4>
+                <p>"For us, 'Cozy' means making every step of shopping comfortable, ensuring seamless experiences from beginning to end!"</p>
+              </div>
+              <div class="founder-card">
+                <img src="./img/others/profile.jfif" alt="Founder Mai">
+                <h4>Mai</h4>
+                <p>"With CozyCoCart, shopping feels like home, bringing warmth and familiarity to every transaction!"</p>
+              </div>
+            </div>
+            <div id="closepopup">
+              <i class="fa-solid fa-xmark close-btn"></i>
+
+            </div>
+          </div>
+        </div>
+
           <h2>CozyCoCart</h2>
           <div class="search">
-            <input type="text" id="" placeholder="Search...">
-          </div>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search...">
+            <ul class="suggestions"></ul>
+          </div>   
+          
           <div class="nav-field">
+            <div class="searchi" id="searchi">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
             <a href="./received-items.html" title="Cart">
               <i class="fa-solid fa-cart-shopping"></i>
             </a>
@@ -41,64 +135,46 @@
             <div class="nav-item" title="Profile" id="profiles">
               <i class="fa-solid fa-circle-user user-profile"></i>
               <div class="dropdown-profile" id="dropdown-profile">
-                <h4>Profile</h4>
-                <div class="profileNav">
-                  <div id="profile-nav">Profile</div>
-                  <div id="profile-logout">Logout</div>
-                </div>
+              <h4>Profile</h4>
+              <div class="profileNav">
+                <div id="profile-nav">Profile</div>
+                <div id="profile-logout">Logout</div>
               </div>
             </div>
           </div>
-         
-        </nav>
-        <div class="topnav" id="myTopnav">
-          <a href="homepage.html" >Home</a>
-          <a href="category-page.html?category=men">Men</a>
-          <a href="category-page.html?category=women">Women</a>
-          <a href = "category-page.html?category=accessories">Accessories</a>
-          <div class="dropdown">
-            <button class="dropbtn">Others
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="category-page.html?category=gadgets" class="box-category">
-                Gadgets
-              </a>
-              <a href="category-page.html?category=matress" class="box-category">
-                  Mattress
-              </a>
-              <a href="category-page.html?category=daily-supplies" class="box-category">
-                  Daily Supplies
-              </a>
-              <a href="category-page.html?category=kidz-zone" class="box-category">
-                  Kidz Zone
-              </a>
-              <a href="category-page.html?category=home-living" class="box-category">
-                  Home & Living
-              </a>
-              <a href="category-page.html?category=essentials" class="box-category">
-                  Essentials
-              </a>
-     
-              <a href="login.html">Logout</a>
-            </div>     
+        </div>
+        
+      </nav>
+      <div class="topnav" id="myTopnav">
+        <a href="homepage.html">Home</a>
+        <a href="category-page.html?category=men">Men</a>
+        <a href="category-page.html?category=women">Women</a>
+        <div class="dropdown">
+          <button class="dropbtn">Others
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="category-page.html?category=accessories">Accessories</a>
+            <a href="category-page.html?category=hardware">Hardware</a>
+            <a href="category-page.html?category=daily-supplies">Daily Supplies</a>
+            <a href="category-page.html?category=kids">Kidz Zone</a>
+            <a href="category-page.html?category=home-living">Home & Living</a>
+            <a href="category-page.html?category=sports">Sports</a>
           </div>
         </div>
-      </header>
+      </div>
+      
+    </header>
     <!--Product Info--> <br><br>
     <div class="conProductInfo">
    
         <div class="prodDetail">
             <div class="prodInfo">  
               <div class="prodimg">
-                <div class="prodimgDisplay" id="ProductImgMain">
+                <div class="prodimgDisplay" >
+                  <img id="ProductImgMain">
                 </div>
-                <div class="prodimgChoice">
-                  <img src="./img/cloth-men/hoodie.png" alt="">
-                  <img src="./img/cloth-men/hoodie.png" alt="">
-                  <img src="./img/cloth-men/hoodie.png" alt="">
-                  <img src="./img/cloth-men/hoodie.png" alt="">
-                  
+                <div class="prodimgChoice" id="prodimgChoice">
                 </div>
                 <div class="shares">
                   <div class="shareSocmed">
@@ -169,59 +245,47 @@
                 </div>
               </div>
             </div>
-            <div class="prodDesRating">
-              <div class="prodRating">
-                <h4>Product Rating</h4><br>
-                <p><span id="pricyy"></span> of 5</p>
-                <div class="starrs">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div> <br>
-                <div class="ratebut">
-                  <button>All</button>                      
-                  <button>5 Star</button>                      
-                  <button>4 Star</button>                      
-                  <button>3 Star</button>                
-                                       
-                </div>
-                <div class="ratebut">
-                  <button>2 Star</button>                      
-                  <button>1 Star</button> 
-                </div><br>
-                <div class="comments">
-                  <pre>With comments      With Media</pre>
-                </div>
-              </div>
+     
               <div class="prodDescription">
-                <div class="row">
-                  <span class="label">Materials</span>
-                  <span>Cotton</span>
-                </div>
-                <div class="row">
-                  <span class="label">Short Sleeves</span>
-                  <span>Cotton</span>      
-                </div>
-                <div class="row">
-                  <span class="label">Patterns</span>
-                  <span>None</span>    
-                </div>
-                <div class="row">
-                  <span class="label">Stocks</span>
-                  <span id="soldy">128</span>    
-                </div>
 
                 <div class="descrip">
                   Product Description
                 </div>
                   <p id="descrip">
-                    Classic Men's Hoodie Stay cozy and stylish with this soft, breathable hoodie. Perfect for casual wear, it features a comfortable fit, durable fabric, and a sleek design. Available in multiple colors and sizes.
-                  </p>                
+                                      </p>                
+              </div>
+              <div class="comments-area">
+                <div class="rating-box">
+                  <div class="left">
+                    <div class="average" id="avg-rating">0<span>/5</span></div>
+                    <div class="stars" id="star-display">★★★★★</div>
+                    <p class="total-ratings" id="total-ratings">0 Ratings</p>
+                  </div>
+                  <div class="right" id="bars-container">
+                  </div>
+                </div>
+                <div class="review-section">
+                  <div class="review-header">
+                
+                    <div class="sort" onclick="alert('Sorting reviews...')">
+                      <i class="fas fa-arrow-up"></i> Sort: <strong>Relevance</strong>
+                    </div>
+                  </div>
+              
+                  <!-- Single Review -->
+                  <div class="review" id="review">
+                   
+                  </div>
+              
               </div>
             </div>
-        </div>
+            <div class="similarProd">
+              <h2>Similar Products</h2>
+              <div class="product-list">
+                
+                <div class="products" id="AllProduct"></div>
+              </div>
+            </div>
     </div><br><br>
     </div>
     <footer>
@@ -260,5 +324,5 @@
   </footer>
 </body>
 <script type="module" src="./js/SelectOrder.js"></script>
-<script src="./js/default.js"></script>
+<script type="module" src="./js/default.js"></script>
 </html>

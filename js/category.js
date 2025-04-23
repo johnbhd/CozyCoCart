@@ -4,10 +4,18 @@ import { Products } from "./allProduct.js";
 const products = Products();
 const params = new URLSearchParams(window.location.search);
 const category = params.get('category');
-
+const productName = params.get("product");
 
 const filteredProducts = products.filter(product => product.category === category);
+const productget = products.filter(p => p.name === productName);
 const AllProduct = document.getElementById("AllProduct");
+
+
+productget.forEach((product) => {
+    AllProduct.appendChild(ProductsGet(product));
+    });
+
+
 
 const categoryHandle = {
     "all": () => {

@@ -54,6 +54,7 @@ function SignUp() {
 
     userSignup.address = null;
     userSignup.contact = null;
+    userSignup.fullname = null
     userSignup.money = randomMoney;
     userSignup.userId = Date.now();
     userSignup.role = 'user'; // Assign default role as 'user'
@@ -76,9 +77,10 @@ function DefaultUser() {
                 password: "user123",
                 address: null,
                 contact: null,
+                fullName: null,
                 money: 1000,
                 userId: 1678901000000,
-                role: 'user' // User role
+                role: 'user', // User role
             },
             {
                 username: "john",
@@ -86,9 +88,10 @@ function DefaultUser() {
                 password: "john123",
                 address: null,
                 contact: null,
+                fullName: null,
                 money: 1500,
                 userId: 1678902000000,
-                role: 'admin' // Admin role
+                role: 'admin', // Admin role
             },
             {
                 username: "camile",
@@ -96,9 +99,10 @@ function DefaultUser() {
                 password: "camile123",
                 address: null,
                 contact: null,
+                fullName: null,
                 money: 1200,
                 userId: 1678903000000,
-                role: 'user' // User role
+                role: 'user', // User role
             },
             {
                 username: "marco",
@@ -106,9 +110,10 @@ function DefaultUser() {
                 password: "marco123",
                 address: null,
                 contact: null,
+                fullName: null,
                 money: 1300,
                 userId: 1678904000000,
-                role: 'user' // Admin role
+                role: 'user', // User role
             },
             {
                 username: "jordan",
@@ -116,9 +121,10 @@ function DefaultUser() {
                 password: "jordan123",
                 address: null,
                 contact: null,
+                fullName: null,
                 money: 1100,
                 userId: 1678905000000,
-                role: 'user' // User role
+                role: 'user', // User role
             },
             {
                 username: "louise",
@@ -126,11 +132,12 @@ function DefaultUser() {
                 password: "louise123",
                 address: null,
                 contact: null,
+                fullName: null,
                 money: 1400,
                 userId: 1678906000000,
-                role: 'user' // User role
+                role: 'user', // User role
             }
-          ];
+        ];
           localStorage.setItem('users', JSON.stringify(defaultUsers));
           console.log('Default users with roles added');
     } 
@@ -195,3 +202,32 @@ window.addEventListener("click", (event) => {
 });
 
 
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eye');
+    
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";  // Show password
+      eyeIcon.classList.remove('fa-eye-slash');
+      eyeIcon.classList.add('fa-eye');
+    } else {
+      passwordInput.type = "password";  // Hide password
+      eyeIcon.classList.remove('fa-eye');
+      eyeIcon.classList.add('fa-eye-slash');
+    }
+  }
+  
+function togglePasswordVisibilitys() {
+    const passwordInput = document.getElementById('passwordLogs');
+    const eyeIcon = document.getElementById('eyes');
+    
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";  // Show password
+      eyeIcon.classList.remove('fa-eye-slash');
+      eyeIcon.classList.add('fa-eye');
+    } else {
+      passwordInput.type = "password";  // Hide password
+      eyeIcon.classList.remove('fa-eye');
+      eyeIcon.classList.add('fa-eye-slash');
+    }
+  }

@@ -3,12 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Orders - CozyCoCart</title>
+
+  <title>Your Order - CozyCoCart</title>
+
+  <meta name="description" content="Thank you for your purchase! Your order has been confirmed and is being processed. Review your order details and shipping information here.">
+  <meta name="keywords" content="order confirmation, CozyCoCart order, purchase receipt, order details, online shopping, CozyCoCart checkout">
+  <meta name="author" content="CozyCoCart Team">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Order Confirmation - CozyCoCart">
+  <meta property="og:description" content="Your order has been confirmed. Thank you for shopping with CozyCoCart. Here's a summary of your order and shipping information.">
+  <meta property="og:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+  <meta property="og:url" content="https://cozycocart.vercel.app/received-items.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Order Confirmation - CozyCoCart">
+  <meta name="twitter:description" content="Thank you for your purchase! Your CozyCoCart order has been confirmed and is being processed.">
+  <meta name="twitter:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+
   <link rel="stylesheet" type="text/css" href="./css/default.css"> <!--link para sa nav at banner-->
   <link rel="stylesheet" type="text/css" href="./css/receive-items.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
 
+   <!-- Structured Data (JSON-LD) for Order Confirmation Page -->
+   <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebPage",
+      "name": "Order Confirmation - CozyCoCart",
+      "url": "https://cozycocart.vercel.app/received-items.html",
+      "description": "Thank you for your purchase! Your order has been confirmed and is being processed. Review your order details and shipping information here.",
+      "mainEntityOfPage": "https://schema.org/WebPage",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CozyCoCart",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cozycocart.vercel.app/img/logo.jpg"
+        }
+      }
+    }
+    </script>
 </head>
 <style>
 </style> 
@@ -16,74 +54,111 @@
   <div class="con-wrapper"> 
       <!--NAV-->
       <header>
-
-        <nav>
+        
+        <nav class="searnav" id="searnav">
           <img src="./img/logo.jpg" alt="" id="logo"> 
-          <h2>CozyCoCart</h2>
           <div class="search">
-            <input type="text" id="" placeholder="Search...">
+            <input type="text" class="search-input" placeholder="Search...">
+            <i class="fa-solid fa-xmark search-btn" id="searchClose"></i>
+            <ul class="suggestions"></ul>
           </div>
-          <div class="nav-field">
-            <a href="./received-items.html" title="Cart">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            <div class="nav-item" title="Notifications" id="notification">
-              <i class="fa-solid fa-bell"></i>
-              <div class="dropdown-noti" id="dropdown-noti">
-                <h4>Notifications</h4>
-                <hr>
-                <div class="noti">
-                  <p>"No new notifications at the moment."</p>
+        </nav>
+        <nav class="navi" id="navi">
+          <div class="logos" id="buti">
+            <img src="./img/logo.jpg" alt="logo" id="logo">
+          </div>
+          <div id="overlay"></div>
+
+          <div id="popup" role="dialog" aria-modal="true">
+            <div class="popDiv">
+              <img src="./img/logo.jpg" alt="CozyCoCart Logo" id="logos">
+          
+              <h2 class="brand-title">CozyCoCart</h2>
+              <p class="brand-description">
+                <b>CozyCoCart</b> is a simple and cozy eCommerce platform that provides a seamless shopping experience with intuitive cart management and efficient product and order management. Designed for small-to-medium-sized businesses, it offers a lightweight, easy-to-use solution that creates a comfortable and inviting shopping journey for every user.
+              </p>
+          
+              <h3 class="founder-title">Founder</h3>
+              <div class="founder-section">
+                <div class="founder-card">
+                  <img src="./img/others/profile.jfif" alt="Founder JB">
+                  <h4>JB</h4>
+                  <p>"At CozyCoCart, we focus on building simplicity and comfort in every cart, making the shopping process cozy, easy, and enjoyable!"</p>
+                </div>
+                <div class="founder-card">
+                  <img src="./img/others/profile.jfif" alt="Founder Francis">
+                  <h4>Francis</h4>
+                  <p>"For us, 'Cozy' means making every step of shopping comfortable, ensuring seamless experiences from beginning to end!"</p>
+                </div>
+                <div class="founder-card">
+                  <img src="./img/others/profile.jfif" alt="Founder Mai">
+                  <h4>Mai</h4>
+                  <p>"With CozyCoCart, shopping feels like home, bringing warmth and familiarity to every transaction!"</p>
                 </div>
               </div>
+              <div id="closepopup">
+                <i class="fa-solid fa-xmark close-btn"></i>
+
+              </div>
             </div>
-            <div class="nav-item" title="Profile" id="profiles">
-              <i class="fa-solid fa-circle-user user-profile"></i>
-              <div class="dropdown-profile" id="dropdown-profile">
+          </div>
+
+            <h2>CozyCoCart</h2>
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" class="search-input" placeholder="Search...">
+              <ul class="suggestions"></ul>
+            </div>   
+            
+            <div class="nav-field">
+              <div class="searchi" id="searchi">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <a href="./received-items.html" title="Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+              <div class="nav-item" title="Notifications" id="notification">
+                <i class="fa-solid fa-bell"></i>
+                <div class="dropdown-noti" id="dropdown-noti">
+                  <h4>Notifications</h4>
+                  <hr>
+                  <div class="noti">
+                    <p>"No new notifications at the moment."</p>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-item" title="Profile" id="profiles">
+                <i class="fa-solid fa-circle-user user-profile"></i>
+                <div class="dropdown-profile" id="dropdown-profile">
                 <h4>Profile</h4>
                 <div class="profileNav">
-                  <p id="profileName"></p>
                   <div id="profile-nav">Profile</div>
                   <div id="profile-logout">Logout</div>
                 </div>
               </div>
             </div>
           </div>
-         
+          
         </nav>
         <div class="topnav" id="myTopnav">
-          <a href="homepage.html" >Home</a>
+          <a href="homepage.html">Home</a>
           <a href="category-page.html?category=men">Men</a>
           <a href="category-page.html?category=women">Women</a>
-          <a href = "category-page.html?category=accessories">Accessories</a>
           <div class="dropdown">
             <button class="dropbtn">Others
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-              <a href="category-page.html?category=gadgets" class="box-category">
-                Gadgets
-              </a>
-              <a href="category-page.html?category=matress" class="box-category">
-                  Mattress
-              </a>
-              <a href="category-page.html?category=daily-supplies" class="box-category">
-                  Daily Supplies
-              </a>
-              <a href="category-page.html?category=kidz-zone" class="box-category">
-                  Kidz Zone
-              </a>
-              <a href="category-page.html?category=home-living" class="box-category">
-                  Home & Living
-              </a>
-              <a href="category-page.html?category=essentials" class="box-category">
-                  Essentials
-              </a>
-     
-              <a href="login.html">Logout</a>
-            </div>     
+              <a href="category-page.html?category=accessories">Accessories</a>
+              <a href="category-page.html?category=hardware">Hardware</a>
+              <a href="category-page.html?category=daily-supplies">Daily Supplies</a>
+              <a href="category-page.html?category=kids">Kidz Zone</a>
+              <a href="category-page.html?category=home-living">Home & Living</a>
+              <a href="category-page.html?category=sports">Sports</a>
+            </div>
           </div>
         </div>
+        
       </header>
     <!--Your Orders--> 
     <div class="your-orders">
@@ -112,6 +187,14 @@
     </div>
   <!-- Orders Section -->
   <div id="orders" class="section current">
+    <div class="header-orders">
+      <span class="status-tab active" data-status="All">All</span>
+      <span class="status-tab" data-status="🛒 Order Placed">🛒 Order Placed</span>
+      <span class="status-tab" data-status="⚙️ Processing">⚙️ Processing</span>
+      <span class="status-tab" data-status="🚚 Shipped">🚚 Shipped</span>
+      <span class="status-tab" data-status="📦 Delivered">📦 Delivered</span>
+    </div>
+    
     <div class="orderUser">
 
     </div>
@@ -122,7 +205,6 @@
     <div class="cart-sec">
         <div class="cart-header">
           <h2>Shopping Cart</h2>
-          <p>Edit</p>
         </div>
         <div class="cart-product">
 
@@ -152,15 +234,16 @@
   <div id="Profile" class="section">
     <div class="profile-sec">
       <h4>Profile</h4>
-      <form>
+      <form id="userForm">
         <label>Full Name:</label>
-        <input type="text" placeholder="John Doe">
+        <input type="text" id="fullname" placeholder="John Doe">
         <label>Contact Number:</label>
-        <input type="number" placeholder="+63 912 345 6759"><br>
+        <input type="number" id="contact" placeholder="+63 912 345 6759"><br>
         <label>Address:</label>
-        <textarea id="" placeholder="123 Barangay Street, City, Provice, ZIP"></textarea>
-        <button>Submit</button>
-      </form>
+        <textarea id="address" placeholder="123 Barangay Street, City, Provice, ZIP"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    
     </div>
   </div>
 
@@ -201,6 +284,7 @@
       <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
   </footer>
 </body>
+<script src="./js/noti.js"></script>
 <script type="module" src="./js/yours-order.js"></script>
-<script src="./js/default.js"></script>
+<script type="module" src="./js/default.js"></script>
 </html>

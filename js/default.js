@@ -1,3 +1,7 @@
+import { Products } from "./allProduct.js";
+
+const products = Products();
+
 const notif = document.getElementById('notification');
 const dropNoti = document.getElementById('dropdown-noti');
 
@@ -7,7 +11,70 @@ const logout = document.getElementById('profile-logout');
 const profileName = document.getElementById('profileName');
 
 const usersSession = JSON.parse(localStorage.getItem('loggedUsers')) || []; 
+const searchToggle = document.getElementById('searchi');
+const navi = document.getElementById('navi');
+const searnav = document.getElementById('searnav');
+const searchInputs = document.querySelectorAll('.search-input');
+const suggestionBoxes = document.querySelectorAll('.suggestions');
+const search = document.querySelector('.search');
+const searchClose = document.getElementById('searchClose');
+
+const buti = document.getElementById('buti');
+const popup = document.getElementById('popup');
+const closepopup = document.getElementById('closepopup');
+const overlay = document.getElementById('overlay');
 //profileName.innerHTML = usersSession.email;
+
+// profile Founder
+buti.addEventListener('click', () => {
+  popup.style.display = 'flex';
+  overlay.style.display = 'flex';
+});
+closepopup.addEventListener('click', () => {
+  popup.style.display = 'none';
+  overlay.style.display = 'none';
+});
+
+
+// search style
+searchToggle.addEventListener('click', () => {
+  navi.style.display = "none";
+  searnav.style.display = "flex";
+  search.style.display = "flex"
+  searchInputs.forEach(input => input.style.display = "flex");
+});
+searchClose.addEventListener('click', () => {
+  navi.style.display = "flex";
+  searnav.style.display = "none";
+  search.style.display = "none";
+});
+
+// Attach input listeners
+searchInputs.forEach((input, index) => {
+  const suggestionsBox = suggestionBoxes[index];
+
+  input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    suggestionsBox.innerHTML = "";
+
+    if (query.length === 0) return;
+
+    const filtered = products.filter(p =>
+      p.name.toLowerCase().includes(query)
+    );
+
+    filtered.forEach(product => {
+      const li = document.createElement("li");
+      li.textContent = product.name;
+      li.style.cursor = "pointer";
+      li.addEventListener("click", () => {
+        window.location.href = `/category-page.html?product=${product.name}`;
+      });
+      suggestionsBox.appendChild(li);
+    });
+  });
+});
+
 
 notif.addEventListener('click',() => {
     if (dropNoti.style.display === 'none') {
@@ -38,75 +105,4 @@ logout.addEventListener('click', () => {
 
 console.log("Selected:\n"+localStorage.getItem('selectedProduct'));
 console.log("Order:\n"+localStorage.getItem('userOrder'));
-
-
-const params = new URLSearchParams(window.location.search);
-const page = params.get('page');
-
-if (page) {
-  const section = document.getElementById(page);
-  if (section) {
-    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('current'));
-    section.classList.add('current');
-
-    document.querySelectorAll('.rows').forEach(btn => btn.classList.remove('current'));
-
-    document.querySelectorAll('.rows').forEach(btn => {
-      if (btn.getAttribute('onclick')?.includes(`'${page}'`)) {
-        btn.classList.add('current');
-      }
-    });
-  }
-}
-
-function showSection(id, element) {
-    // Update navigation styles
-    document.querySelectorAll('.rows').forEach(btn => btn.classList.remove('current'));
-    element.classList.add('current');
-
-    // Show the correct section
-    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('current'));
-    document.getElementById(id).classList.add('current');
-
-    // Update the header content
-    const headerDiv = document.querySelector('.headerOrder');
-    headerDiv.innerHTML = ''; // Clear existing content
-
-    const contentMap = {
-      orders: {
-        title: "Your Orders",
-        desc: "Track your recent purchases, view details, reorder items, or check shipping status."
-      },
-      cart: {
-        title: "Your Cart",
-        desc: "Review items added, update quantities, or proceed to checkout when ready."
-      },
-      wallet: {
-        title: "Your Wallet",
-        desc: "Manage your balance, track transactions, and fund your purchases securely."
-      },
-      Profile: {
-        title: "Your Profile",
-        desc: "Update personal info, change password, and manage your account details."
-      }
-    };
-
-    if (contentMap[id]) {
-      const h2 = document.createElement('h2');
-      h2.innerHTML = contentMap[id].title;
-
-      const p = document.createElement('p');
-      p.innerHTML = contentMap[id].desc;
-
-      headerDiv.appendChild(h2);
-      headerDiv.appendChild(p);
-    }
-  }
-  window.addEventListener('DOMContentLoaded', () => {
-    const defaultSection = document.querySelector('.rows.current');
-    if (defaultSection) {
-      const id = defaultSection.getAttribute('onclick').match(/'(\w+)'/)[1];
-      showSection(id, defaultSection);
-    }
-  });
 

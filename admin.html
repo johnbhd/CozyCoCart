@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Dashboard</title> 
-  <link rel="stylesheet" href="./css/admin.css">
-  <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Admin Dashboard - CozyCoCart</title> 
+    <meta name="description" content="Admin dashboard for managing users, orders, and products in the CozyCoCart store. View analytics and handle store data efficiently.">
+    <meta name="keywords" content="admin dashboard, CozyCoCart admin, eCommerce admin, order management, user management, product management">
+    <meta name="author" content="CozyCoCart Team">
+  
+    <!-- Open Graph -->
+    <meta property="og:title" content="Admin Dashboard - CozyCoCart">
+    <meta property="og:description" content="Manage CozyCoCart users, orders, and products efficiently from the admin dashboard.">
+    <meta property="og:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+    <meta property="og:url" content="https://cozycocart.vercel.app/admin.html">
+    <meta property="og:type" content="website">
+  
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Admin Dashboard - CozyCoCart">
+    <meta name="twitter:description" content="Access the CozyCoCart admin panel to manage users, orders, and products.">
+    <meta name="twitter:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+  
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebPage",
+      "name": "Admin Dashboard - CozyCoCart",
+      "url": "https://cozycocart.vercel.app/admin.html",
+      "description": "Admin interface for CozyCoCart, providing control over users, products, and orders for store management.",
+      "mainEntityOfPage": "https://schema.org/WebPage",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CozyCoCart",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cozycocart.vercel.app/img/logo.jpg"
+        }
+      }
+    }
+    </script>
+  </head>
+  
 <body>
     <header>
         <div class="title">
@@ -31,10 +70,6 @@
       <h2 id="productData">0</h2>
       <p>Products</p>
     </div>
-    <div class="stat-box">
-      <h2 id="requestData">0</h2>
-      <p>Money Requests</p>
-    </div>
   </div>
 
   <div class="content-section">
@@ -48,9 +83,10 @@
               <th>User ID</th>
               <th>Username</th>
               <th>Email</th>
+              <th>Money</th>
+              <th>Full Name</th>
               <th>Contact</th>
               <th>Address</th>
-              <th>Money</th>
             </tr>
           </thead>
           <tbody id="userTableBody">
@@ -82,40 +118,54 @@
         </table>
       </div>
     </div>
-
     <div class="section">
-      <h3>User Money Requests</h3>
+      <h3>Product List</h3>
+      <div class="sort-prod">
+           <!-- Sort by Price -->
+        <label for="sortOrder">Sort by:</label>
+        <select id="sortOrder">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+
+        <!-- Filter by Category -->
+        <label for="filterCategory">Filter by:</label>
+        <select id="filterCategory">
+          <option value="all">All</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="accessories">Accessories</option>
+          <option value="hardware">Hardware</option>
+          <option value="daily-supplies">Daily Supplies</option>
+          <option value="kids">Kidz Zone</option>
+          <option value="home-living">Home & Living</option>
+          <option value="sports">Sports</option>
+        </select>
+      </div>
       <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th>Request ID</th>
-              <th>User ID</th>
-              <th>Username</th>
-              <th>Amount</th>
-              <th>Status</th>
+              <th>#</th>
+              <th>Img</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Rating</th>
+              <th>Sold</th>
+              <th>Color</th>
+              <th>Size</th>
+              <th>Price</th>
+              <th>Comments</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>REQ001</td>
-              <td>1678901000000</td>
-              <td>user</td>
-              <td>₱500</td>
-              <td>
-                <select>
-                  <option>Pending</option>
-                  <option>Processing</option>
-                  <option>Shipped</option>
-                  <option>Delivered</option>
-                  <option>Cancelled</option>
-                </select>
-              </td>
-            </tr>
+          <tbody id="productAll">
+            
           </tbody>
         </table>
       </div>
     </div>
+    
+    
   </div>
 
 </body>

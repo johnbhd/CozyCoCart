@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
     <title>Login - CozyCoCart</title>
+    <meta name="google-site-verification" content="aFBe1VkP8LoHxmKVkStPRDUhU2FusP82YsqeFyMHLjw" />
+    <meta name="description" content="Login to your CozyCoCart account and enjoy a cozy and personalized shopping experience.">
+    <meta name="robots" content="noindex, nofollow"> <!-- Prevent search engines from indexing the login page -->
+    <meta name="author" content="CozyCoCart Team">
+   
+    <!-- Open Graph for social previews -->
+    <meta property="og:title" content="Login - CozyCoCart">
+    <meta property="og:description" content="Access your account and continue your cozy shopping journey.">
+    <meta property="og:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+    <meta property="og:url" content="https://cozycocart.vercel.app/index.html">
+    <meta property="og:type" content="website">
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Login - CozyCoCart">
+    <meta name="twitter:description" content="Secure login to your CozyCoCart account.">
+    <meta name="twitter:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+  
     <link rel="stylesheet" href="./css/login.css" />
     <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+     <!-- Structured Data (JSON-LD) -->
+     <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebPage",
+        "name": "Login - CozyCoCart",
+        "url": "https://cozycocart.vercel.app/index.html",
+        "description": "Login to your CozyCoCart account to access your personalized shopping experience, order history, and more.",
+        "mainEntityOfPage": "https://schema.org/WebPage",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CozyCoCart",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cozycocart.vercel.app/img/logo.jpg"
+          }
+        }
+      }
+      </script>
   </head>
+  <style>
+
+  </style>
   <body>
     <div class="container">
       <div class="login">
@@ -18,7 +61,11 @@
         <h2>CozyCoCart</h2>
         <form id="LoginForm" class="loginField">
           <input type="email" placeholder="Email or Phone Number" id="emailLogs" required />
-          <input type="password" placeholder="Enter Password" id="passwordLogs" required />
+          <div class="show">
+            <input type="password" placeholder="Enter Password" id="passwordLogs" required />
+            <i class="fa-solid fa-eye-slash" id="eyes" onclick="togglePasswordVisibilitys()"></i>
+          </div>
+
           <button type="submit" class="btn" onclick="Login(event)">
             Login
           </button>
@@ -45,7 +92,12 @@
         <form id="SignupForm" class="signupField">
           <input type="text" placeholder="Username" id="username" required />
           <input type="email" placeholder="Email or Phone Number" id="email" required />
-          <input type="password" placeholder="Create Password" id="password" required />
+          <div class="show">
+            <input type="password" placeholder="Create Password" id="password" required />
+            <i class="fa-solid fa-eye-slash" id="eye" onclick="togglePasswordVisibility()"></i>
+
+          </div>
+
           <button type="submit" class="btn" onclick="SignUp()">
             Sign Up
           </button>

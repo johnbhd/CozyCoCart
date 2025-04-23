@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin.html  # Assuming the admin page should not be crawled
+Disallow: /login.html  # If you have a login page, you might want to exclude it
+Allow: /category-page.html
+Allow: /product-info.html
+Allow: /basket-page.html
+Allow: /homepage.html
+Allow: /received-items.html
+Sitemap: https://cozycocart.vercel.app/sitemap.xml

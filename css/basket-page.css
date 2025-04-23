@@ -255,58 +255,77 @@
     display: none;
     position: fixed;
     z-index: 999;
-    left: 0; 
+    left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    padding: 1rem;
   }
+  
   .modal-content {
     background: #007dfe;
-    padding: 20px;
+    padding: 2rem;
     border-radius: 12px;
-    width: 40%;
-    height: 75%;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    max-height: 90vh;
     text-align: center;
     font-family: 'Gotham Rounded', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    overflow-y: auto;
+    position: relative;
   }
+  
   .modal-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 15px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
   }
+  
   .modal-buttons button {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
   }
+  
   .headModal {
-      display: flex;
-      justify-content: center;
+    display: flex;
+    justify-content: center;
   }
+  
   .GcashingIntro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    text-align: center;
   }
+  
   .GcashingIntro img {
     width: 30vh;
+    max-width: 80%;
+    height: auto;
   }
+  
   .GcashingIntro h4 {
     font-family: 'Gotham Rounded', sans-serif;
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
+  
   .loading-circle {
     border: 6px solid rgba(0, 0, 0, 0.01);
     border-top: 6px solid white;
@@ -316,8 +335,13 @@
     height: 50px;
     margin-top: 20px;
     animation: spin 0.9s linear infinite;
-    }
-    /* main modal */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
   .GcashingMain {
     display: none;
     flex-direction: column;
@@ -325,56 +349,107 @@
     align-items: center;
     color: white;
     width: 100%;
-
   }
+  
   .main-head-gcashing {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
+  
   .main-head-gcashing h4 {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
   
   .main-head-gcashing img {
     width: 30vh;
+    max-width: 80%;
+    height: auto;
   }
+  
   .xmark {
-    position: relative;
-    left: 33vh;
-    top: -20vh;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     font-size: 1.7rem;
     cursor: pointer;
+    color: white;
+    z-index: 1000;
   }
+  
   .row-main {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    gap: 8rem;
-    font-size: 1.6rem;
-    margin: 10px;
+    gap: 2rem;
+    font-size: 1.2rem;
+    margin: 1rem;
+    flex-wrap: wrap;
   }
+  
   #gcashbut {
-    padding: 12px 24px; 
-    width: 100%; 
-    border-radius: 50px; 
-    font-size: 1.4rem; 
-    border: 2px solid transparent; 
-    background-color: white; 
-    color: black; 
-    font-weight: 700; 
-    margin-top: 10px; 
-    cursor: pointer; 
-    text-transform: uppercase; 
-    transition: all 0.3s ease; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    border: 2px solid transparent;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    margin-top: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   #gcashbut:hover {
-    background-color: #eff1f4; 
-        transform: translateY(2px);
+    background-color: #eff1f4;
+    transform: translateY(2px);
   }
   
-
+  /* Responsive Breakpoints */
+  @media (max-width: 768px) {
+    .GcashingIntro h4 {
+      font-size: 2rem;
+    }
+  
+    .main-head-gcashing h4 {
+      font-size: 1.5rem;
+    }
+  
+    .row-main {
+      gap: 1rem;
+      font-size: 1rem;
+    }
+  
+    .xmark {
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      padding: 1rem;
+    }
+  
+    .GcashingIntro h4 {
+      font-size: 1.5rem;
+    }
+  
+    .main-head-gcashing h4 {
+      font-size: 1.2rem;
+    }
+  
+    #gcashbut {
+      font-size: 1rem;
+    }
+  }
+  
   
     @media(max-width: 768px) {
       .payment-field {

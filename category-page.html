@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Category Page - CozyCoCart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>Shop by Category - CozyCoCart</title>
+  
+    <meta name="description" content="Browse CozyCoCart product categories including men’s fashion, women’s wear, accessories, and home living. Discover your cozy shopping style.">
+    <meta name="keywords" content="shop by category, men fashion, women fashion, accessories, home living, cozy shopping, CozyCoCart">
+    <meta name="author" content="CozyCoCart Team">
+  
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shop by Category - CozyCoCart">
+    <meta property="og:description" content="Explore CozyCoCart categories for clothing, accessories, and more. Find your cozy essentials.">
+    <meta property="og:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+    <meta property="og:url" content="https://cozycocart.vercel.app/category-page.html">
+    <meta property="og:type" content="website">
+  
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop by Category - CozyCoCart">
+    <meta name="twitter:description" content="Discover categories like men’s fashion, accessories, and home goods on CozyCoCart.">
+    <meta name="twitter:image" content="https://cozycocart.vercel.app/img/logo.jpg">
+  
     <link rel="stylesheet" type="text/css" href="./css/default.css" />
     <!--link para sa nav at banner-->
     <link rel="stylesheet" type="text/css" href="./css/category.css" />
@@ -12,80 +31,138 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon" />
+  
+      <!-- Structured Data (JSON-LD) for Category Page -->
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "WebPage",
+          "name": "Shop by Category - CozyCoCart",
+          "url": "https://cozycocart.vercel.app/category-page.html",
+          "description": "Browse CozyCoCart product categories including men’s fashion, women’s wear, accessories, and home living. Discover your cozy shopping style.",
+          "mainEntityOfPage": "https://schema.org/WebPage",
+          "publisher": {
+            "@type": "Organization",
+            "name": "CozyCoCart",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://cozycocart.vercel.app/img/logo.jpg"
+            }
+          }
+        }
+        </script>
   </head>
 
   <body>
     <div class="con-wrapper">
-       <!--NAV-->
-       <header>
-
-        <nav>
-          <img src="./img/logo.jpg" alt="" id="logo"> 
-          <h2>CozyCoCart</h2>
-          <div class="search">
-            <input type="text" id="" placeholder="Search...">
-          </div>
-          <div class="nav-field">
-            <a href="./received-items.html" title="Cart">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            <div class="nav-item" title="Notifications" id="notification">
-              <i class="fa-solid fa-bell"></i>
-              <div class="dropdown-noti" id="dropdown-noti">
-                <h4>Notifications</h4>
-                <hr>
-                <div class="noti">
-                  <p>"No new notifications at the moment."</p>
+         <!--NAV-->
+         <header>
+        
+          <nav class="searnav" id="searnav">
+            <img src="./img/logo.jpg" alt="" id="logo"> 
+            <div class="search">
+              <input type="text" class="search-input" placeholder="Search...">
+              <i class="fa-solid fa-xmark search-btn" id="searchClose"></i>
+              <ul class="suggestions"></ul>
+            </div>
+          </nav>
+          <nav class="navi" id="navi">
+            <div class="logos" id="buti">
+              <img src="./img/logo.jpg" alt="logo" id="logo">
+            </div>
+            <div id="overlay"></div>
+  
+            <div id="popup" role="dialog" aria-modal="true">
+              <div class="popDiv">
+                <img src="./img/logo.jpg" alt="CozyCoCart Logo" id="logos">
+            
+                <h2 class="brand-title">CozyCoCart</h2>
+                <p class="brand-description">
+                  <b>CozyCoCart</b> is a simple and cozy eCommerce platform that provides a seamless shopping experience with intuitive cart management and efficient product and order management. Designed for small-to-medium-sized businesses, it offers a lightweight, easy-to-use solution that creates a comfortable and inviting shopping journey for every user.
+                </p>
+            
+                <h3 class="founder-title">Founder</h3>
+                <div class="founder-section">
+                  <div class="founder-card">
+                    <img src="./img/others/profile.jfif" alt="Founder JB">
+                    <h4>JB</h4>
+                    <p>"At CozyCoCart, we focus on building simplicity and comfort in every cart, making the shopping process cozy, easy, and enjoyable!"</p>
+                  </div>
+                  <div class="founder-card">
+                    <img src="./img/others/profile.jfif" alt="Founder Francis">
+                    <h4>Francis</h4>
+                    <p>"For us, 'Cozy' means making every step of shopping comfortable, ensuring seamless experiences from beginning to end!"</p>
+                  </div>
+                  <div class="founder-card">
+                    <img src="./img/others/profile.jfif" alt="Founder Mai">
+                    <h4>Mai</h4>
+                    <p>"With CozyCoCart, shopping feels like home, bringing warmth and familiarity to every transaction!"</p>
+                  </div>
+                </div>
+                <div id="closepopup">
+                  <i class="fa-solid fa-xmark close-btn"></i>
+  
                 </div>
               </div>
             </div>
-            <div class="nav-item" title="Profile" id="profiles">
-              <i class="fa-solid fa-circle-user user-profile"></i>
-              <div class="dropdown-profile" id="dropdown-profile">
-                <h4>Profile</h4>
-                <div class="profileNav">
-                  <div id="profile-nav">Profile</div>
-                  <div id="profile-logout">Logout</div>
+  
+              <h2>CozyCoCart</h2>
+              <div class="search">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search...">
+                <ul class="suggestions"></ul>
+              </div>   
+              
+              <div class="nav-field">
+                <div class="searchi" id="searchi">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <a href="./received-items.html" title="Cart">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <div class="nav-item" title="Notifications" id="notification">
+                  <i class="fa-solid fa-bell"></i>
+                  <div class="dropdown-noti" id="dropdown-noti">
+                    <h4>Notifications</h4>
+                    <hr>
+                    <div class="noti">
+                      <p>"No new notifications at the moment."</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-item" title="Profile" id="profiles">
+                  <i class="fa-solid fa-circle-user user-profile"></i>
+                  <div class="dropdown-profile" id="dropdown-profile">
+                  <h4>Profile</h4>
+                  <div class="profileNav">
+                    <div id="profile-nav">Profile</div>
+                    <div id="profile-logout">Logout</div>
+                  </div>
                 </div>
               </div>
             </div>
+            
+          </nav>
+          <div class="topnav" id="myTopnav">
+            <a href="homepage.html">Home</a>
+            <a href="category-page.html?category=men">Men</a>
+            <a href="category-page.html?category=women">Women</a>
+            <div class="dropdown">
+              <button class="dropbtn">Others
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="category-page.html?category=accessories">Accessories</a>
+                <a href="category-page.html?category=hardware">Hardware</a>
+                <a href="category-page.html?category=daily-supplies">Daily Supplies</a>
+                <a href="category-page.html?category=kids">Kidz Zone</a>
+                <a href="category-page.html?category=home-living">Home & Living</a>
+                <a href="category-page.html?category=sports">Sports</a>
+              </div>
+            </div>
           </div>
-         
-        </nav>
-        <div class="topnav" id="myTopnav">
-          <a href="homepage.html" >Home</a>
-          <a href="category-page.html?category=men">Men</a>
-          <a href="category-page.html?category=women">Women</a>
-          <a href = "category-page.html?category=accessories">Accessories</a>
-          <div class="dropdown">
-            <button class="dropbtn">Others
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="category-page.html?category=gadgets" class="box-category">
-                Gadgets
-              </a>
-              <a href="category-page.html?category=matress" class="box-category">
-                  Mattress
-              </a>
-              <a href="category-page.html?category=daily-supplies" class="box-category">
-                  Daily Supplies
-              </a>
-              <a href="category-page.html?category=kidz-zone" class="box-category">
-                  Kidz Zone
-              </a>
-              <a href="category-page.html?category=home-living" class="box-category">
-                  Home & Living
-              </a>
-              <a href="category-page.html?category=essentials" class="box-category">
-                  Essentials
-              </a>
-     
-              <a href="login.html">Logout</a>
-            </div>     
-          </div>
-        </div>
-      </header>
+          
+        </header>
       <div class="container">
         <!--BANNER-->
         <div class="banner">
@@ -97,15 +174,16 @@
   
           <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="./img/template/banner.jpg" style="width: 100%" />
+            <img src="./img/b14.jpg" style="width: 100%" />
             <div class="text">Caption Two</div>
           </div>
   
           <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="img/bg1.webp" style="width: 100%" />
+            <img src="img/bg9.webp" style="width: 100%" />
             <div class="text">Caption Three</div>
           </div>
+  
   
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -267,7 +345,7 @@
     </footer>
   </body>
   <script src="./js/nav-banner.js"></script>
-  <script src="./js/default.js"></script>
+  <script type="module" src="./js/default.js"></script>
   <script type="module" src="./js/category.js"></script>
 
 </html>

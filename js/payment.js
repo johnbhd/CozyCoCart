@@ -9,13 +9,19 @@ const productFind = products.find(product => product.name === productName);
 
 const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
 const sessionId = JSON.parse(localStorage.getItem('currentUserId'));
-const users = JSON.parse(localStorage.getItem('users'));
+const users = JSON.parse(localStorage.getItem('users')) || [];
 let findUser = users.find(user => user.userId === sessionId);
+const orderUser = users.find(user => user.userId === selectedProduct.orderId);
+
+const findImg = productFind.colors.find(colorimg => colorimg.code === selectedProduct.color);
+console.log(findImg);
 
 let deliveryFee = 35;
 let Quantity = selectedProduct.selectQuantity;
-let Price = productFind.price ;
+let Price = productFind.price;
 let totalPrice = Price * Quantity + deliveryFee;
+
+const DeliveryForm = document.getElementById('DeliveryForm');
 
 // product show basket page and product info
 function ProductShow() {
@@ -36,7 +42,7 @@ function ProductShow() {
 
 
     if (productFind) {
-        imgMain.innerHTML = `<img src="${productFind.img}" alt="${productFind.name}">`;
+        imgMain.innerHTML = `<img src="${findImg.img}" alt="${productFind.name}">`;
         ProductNameInfo.textContent = productFind.name;
         ProductRating.textContent = `${productFind.rating} stars`;
         ProductSold.textContent = `${productFind.sold} sold`;
@@ -131,30 +137,78 @@ function PaymentSummary(price) {
     `;
 }
 // Delivery and Payment 
+document.addEventListener('DOMContentLoaded', function() {
+    const fullName = document.getElementById('fullnameAdds');
+    const contactInput = document.getElementById('numAdds');
+    const addressInput = document.getElementById('addressAdds');
 
-function UserInfo() {
-    
-}
-document.getElementById('place-order').addEventListener('click', () => {
-    const paymentMethod = PaymentMethod(); 
 
-    if (paymentMethod === "Gcashing e-Wallet") {
-        Gcashing(paymentMethod);
-    } else if (!paymentMethod) {
-        alert("Please select a payment method.");
-    } else {
-     
-        PlaceOrder();
+    if (findUser) {
+        if (fullName) fullName.value = findUser.fullName || "";
+        if (contactInput) contactInput.value = findUser.contact || "";
+        if (addressInput) addressInput.value = findUser.address || "";
+    }
+
+
+    if (fullName) {
+        fullName.addEventListener('input', () => {
+            if (findUser) {
+                findUser.fullName = fullName.value;
+                updateUserStorage();
+            }
+        });
+    }
+
+    if (contactInput) {
+        contactInput.addEventListener('input', () => {
+            if (findUser) {
+                findUser.contact = contactInput.value;
+                updateUserStorage();
+            }
+        });
+    }
+
+    if (addressInput) {
+        addressInput.addEventListener('input', () => {
+            if (findUser) {
+                findUser.address = addressInput.value;
+                updateUserStorage();
+            }
+        });
+    }
+
+
+    function updateUserStorage() {
+        localStorage.setItem('users', JSON.stringify(users));
     }
 });
+function UserInfo(e) {
+    e.preventDefault();
+
+    const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+    
+    if (!paymentMethod) {
+        alert("Please select a payment method.");
+        return;
+    }
+    const method = paymentMethod.value;
+    const fullName = document.getElementById('fullnameAdds').value;
+    const contact = document.getElementById('numAdds').value;
+    const address = document.getElementById('addressAdds').value;
+    if (method === "e-Wallet") { 
+        Gcashing(fullName, contact, address);
+    } else {
+        PlaceOrder(fullName, contact, address);
+        alert("Order placed successfully!");
+    }
+}
 
 function PaymentMethod() {
     const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
     if (selectedMethod) {
         const value = selectedMethod.value;
-
      
-        if (value === "Gcashing e-Wallet") {
+        if (value === "e-Wallet") {
             return value;
         }
 
@@ -164,7 +218,7 @@ function PaymentMethod() {
     }    
 }
 
-function Gcashing(value) {
+function Gcashing(fullName, contact, address) {
     const GcashingIntro = document.querySelector('.GcashingIntro');
     const GcashingMain = document.querySelector('.GcashingMain');
     const wallet = document.getElementById('ewallet');
@@ -194,8 +248,8 @@ function Gcashing(value) {
             findUser.money = paymetDeduc;
             console.log(findUser.money)
             localStorage.setItem('users', JSON.stringify(users));
-    
-                PlaceOrder();
+                alert("Order placed successfully!");
+                PlaceOrder(fullName, contact, address);
             });
         } else {
             alert('Error occurred...');
@@ -203,11 +257,11 @@ function Gcashing(value) {
     }
 
     butgcashing.addEventListener('click', () => {
-        GcashingPayment(); // Directly call GcashingPayment when the button is clicked
+        GcashingPayment(); 
     });
 
     setTimeout(() => {
-        GcashingPayment(); // Automatically trigger payment after 2 seconds (if needed)
+        GcashingPayment(); 
     }, 2000);
 
     const modal = document.getElementById('simpleModal');
@@ -219,19 +273,27 @@ function Gcashing(value) {
 
     modal.style.display = 'flex';
 }
-
 document.querySelectorAll('.option-payment-choice').forEach(choice => {
     choice.addEventListener('click', () => {
       const radio = choice.querySelector('input[type="radio"]');
       radio.checked = true;
     });
   });
+
   
 // Place Order
-function PlaceOrder() {
+function PlaceOrder(fullName, contact, address) {
     const paymentMethod = PaymentMethod();
 
     if (!paymentMethod) return;
+    
+    if (findUser) {
+        findUser.fullName = fullName;
+        findUser.contact = contact;
+        findUser.address = address;
+
+        localStorage.setItem('users', JSON.stringify(users));
+    }
 
     let userOrder = [];
     
@@ -251,8 +313,11 @@ function PlaceOrder() {
         quantityOrder: Quantity,
         totalPrice: totalPrice, 
         paymentMethod: paymentMethod,
-        status: "Pending",
+        status: "🛒 Order Placed",
         orderId: selectedProduct.orderId,
+        fullName: fullName,
+        contact: contact,
+        address: address,
     });
 
     const cartItems = JSON.parse(localStorage.getItem('AddtoCart')) || [];
@@ -268,6 +333,7 @@ function PlaceOrder() {
     
 }
 
+DeliveryForm.addEventListener('submit', UserInfo);
 document.getElementById('qty-increase').addEventListener('click', Increase);
 document.getElementById('qty-decrease').addEventListener('click', Decrease);
 ProductShow();
