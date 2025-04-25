@@ -431,8 +431,9 @@ export function Products() {
             description: "Refreshing soap with a calming scent for everyday use. Leaves skin feeling clean and moisturized. A gentle choice for all skin types.",
             sizes: ["One Size"],
             colors: [
-                { name: "White", code: "#FFFFFF", img: "../img/dailysupplies/colors/soap-white.png" },
-                { name: "Lavender", code: "#E6E6FA", img: "../img/dailysupplies/colors/soap-lavender.png" }
+              { name: "White", code: "#FFFFFF", img: "../img/dailysupplies/colors/soap-white.png" },
+              { name: "Lavender", code: "#E6E6FA", img: "../img/dailysupplies/colors/soap-lavender.png" },
+              { name: "Mint Green", code: "#98FF98", img: "../img/dailysupplies/colors/soap-mintgreen.png" }
             ],
             comments: [
                 { user: "user", comment: "Smells amazing and lasts long.", stars: 4 },
@@ -466,27 +467,627 @@ export function Products() {
             ]
         },
         {
-            id: 21,
-            img: "../img/dailysupplies/natural_essential_oils.png",
-            name: "Natural Essential Oils",
-            price: 350.00,
-            rating: 3.5,
-            sold: "5.8k",
-            category: "dailysupplies",
-            description: "Natural oils for relaxation, massage, and aromatherapy. Infused with calming herbs and pure extracts. Perfect for diffusers or topical use.",
+          id: 21,
+          img: "../img/dailysupplies/natural_essential_oils.png",
+          name: "Natural Essential Oils",
+          price: 350.00,
+          rating: 3.5,
+          sold: "5.8k",
+          category: "dailysupplies",
+          description: "Natural oils for relaxation, massage, and aromatherapy. Infused with calming herbs and pure extracts. Perfect for diffusers or topical use.",
+          sizes: ["One Size"],
+          colors: [
+              { name: "Amber Bottle", code: "#996515", img: "../img/dailysupplies/colors/oils-amber.png" },
+              { name: "Clear Bottle", code: "#E0E0E0", img: "../img/dailysupplies/colors/oils-clear.png" },
+              { name: "Green Bottle", code: "#228B22", img: "../img/dailysupplies/colors/oils-green.png" }
+          ],
+          comments: [
+              { user: "john", comment: "Nice scent but fades quickly.", stars: 3 },
+              { user: "marco", comment: "Very calming, I use it daily.", stars: 4 },
+              { user: "user", comment: "Love the natural fragrance.", stars: 4 },
+              { user: "alyssa", comment: "Relaxing after a long day!", stars: 5 },
+              { user: "ken", comment: "Some bottles leaked slightly.", stars: 3 }
+          ]
+      },
+          {
+            id: 22,
+            img: "../img/sports/smartwatch-sport.png",
+            name: "Smartwatch Sport",
+            price: 1899,
+            rating: 5,
+            sold: "3.2k",
+            category: "sports",
+            description: "Track your fitness goals with this waterproof smartwatch. Designed for high-performance workouts and outdoor adventures, it supports real-time GPS tracking. Stay connected and monitor your heart rate effortlessly.",
+            features: ["Heart Rate Monitor", "Water Resistant", "GPS", "Step Tracker"],
             sizes: ["One Size"],
             colors: [
-                { name: "Amber Bottle", code: "#996515", img: "../img/dailysupplies/colors/oils-amber.png" }
+              { name: "Black", code: "#000000", img: "../img/sports/colors/smartwatch-black.png" },
+              { name: "Red", code: "#FF0000", img: "../img/sports/colors/smartwatch-red.png" },
+              { name: "Blue", code: "#0000FF", img: "../img/sports/colors/smartwatch-blue.png" }
             ],
             comments: [
-                { user: "john", comment: "Nice scent but fades quickly.", stars: 3 },
-                { user: "marco", comment: "Very calming, I use it daily.", stars: 4 },
-                { user: "user", comment: "Love the natural fragrance.", stars: 4 },
-                { user: "alyssa", comment: "Relaxing after a long day!", stars: 5 },
-                { user: "ken", comment: "Some bottles leaked slightly.", stars: 3 }
+              { user: "athena", comment: "Excellent watch for daily workouts!", stars: 5 },
+              { user: "mike", comment: "Accurate tracking and battery lasts long.", stars: 5 },
+              { user: "joy", comment: "Really stylish and functional.", stars: 4 },
+              { user: "lena", comment: "Love the design and fitness modes.", stars: 5 },
+              { user: "jake", comment: "Must-have for runners!", stars: 4 }
             ]
-        }
+          },
+          {
+            id: 23,
+            img: "../img/sports/Wrist_Exercises.png",
+            name: "Wrist Exerciser",
+            price: 299,
+            rating: 4,
+            sold: "1.8k",
+            category: "sports",
+            description: "This wrist exerciser strengthens your forearm and hand muscles. Its compact build makes it ideal for both home and office use. Great for athletes or recovery from strain injuries.",
+            features: ["Adjustable Resistance", "Non-Slip Grip"],
+            sizes: ["One Size"],
+            colors: [
+              { name: "Black", code: "#000000", img: "../img/sports/colors/wrist-exerciser-black.png" },
+              { name: "Grey", code: "#808080", img: "../img/sports/colors/wrist-exerciser-grey.png" },
+              { name: "Orange", code: "#FFA500", img: "../img/sports/colors/wrist-exerciser-orange.png" }
+            ],
+            comments: [
+              { user: "liam", comment: "Great for daily wrist workouts.", stars: 4 },
+              { user: "sasha", comment: "Simple and effective.", stars: 3 },
+              { user: "nina", comment: "Helped a lot with my grip strength.", stars: 4 },
+              { user: "kyle", comment: "Works well, though feels stiff at first.", stars: 3 },
+              { user: "emily", comment: "Perfect for post-injury recovery!", stars: 5 }
+            ]
+          },
+          {
+            id: 24,
+            img: "../img/sports/table-tennis-set.png",
+            name: "Table Tennis Set",
+            price: 499,
+            rating: 4,
+            sold: "1.5k",
+            category: "sports",
+            description: "Complete table tennis set for fun matches at home or the club. Features durable paddles and high-bounce balls. Perfect for players of all skill levels.",
+            features: ["2 Paddles", "3 Balls", "Carrying Case"],
+            sizes: ["Standard"],
+            colors: [
+              { name: "Red", code: "#FF0000", img: "../img/sports/colors/table-tennis-red.png" },
+              { name: "Blue", code: "#0000FF", img: "../img/sports/colors/table-tennis-blue.png" },
+              { name: "Green", code: "#228B22", img: "../img/sports/colors/table-tennis-green.png" }
+            ],
+            comments: [
+              { user: "alex", comment: "Awesome set for family games!", stars: 4 },
+              { user: "nora", comment: "Great quality paddles.", stars: 4 },
+              { user: "henry", comment: "Really improved my spin!", stars: 5 },
+              { user: "emma", comment: "Nice grip and control.", stars: 4 },
+              { user: "leo", comment: "Good value for the price.", stars: 4 }
+            ]
+          },
+          {
+            id: 25,
+            img: "../img/sports/Valeo_Neoprene_Hand_Weights.png",
+            name: "Neoprene Hand Weights",
+            price: 749,
+            rating: 5,
+            sold: "3.5k",
+            category: "sports",
+            description: "Ideal for toning and strength workouts. The neoprene coating provides a comfortable, anti-slip grip. Available in multiple weights and vibrant colors.",
+            features: ["Neoprene Coating", "Anti-Slip Surface"],
+            sizes: ["2 lbs", "5 lbs", "10 lbs"],
+            colors: [
+              { name: "Purple", code: "#800080", img: "../img/sports/colors/weights-purple.png" },
+              { name: "Pink", code: "#FFC0CB", img: "../img/sports/colors/weights-pink.png" },
+              { name: "Teal", code: "#008080", img: "../img/sports/colors/weights-teal.png" }
+            ],
+            comments: [
+              { user: "ana", comment: "Love the colors and feel.", stars: 5 },
+              { user: "noah", comment: "Exactly what I needed for home workouts.", stars: 5 },
+              { user: "bella", comment: "Comfortable grip and doesn't slip.", stars: 4 },
+              { user: "tony", comment: "Weights are well balanced and solid.", stars: 5 },
+              { user: "rhea", comment: "Fun colors and easy to clean.", stars: 4 }
+            ]
+          },
+          {
+            id: 26,
+            img: "../img/sports/Professional_Badminton_Rackets.png",
+            name: "Professional Badminton Racket",
+            price: 1099,
+            rating: 4,
+            sold: "2.7k",
+            category: "sports",
+            description: "Engineered for speed and control, this racket suits all levels. The carbon fiber build ensures durability and lightweight handling. Absorbs shock effectively for longer play comfort.",
+            features: ["Carbon Fiber", "Shock Absorption"],
+            sizes: ["One Size"],
+            colors: [
+              { name: "Black", code: "#000000", img: "../img/sports/colors/racket-black.png" },
+              { name: "Yellow", code: "#FFFF00", img: "../img/sports/colors/racket-yellow.png" },
+              { name: "Red", code: "#FF0000", img: "../img/sports/colors/racket-red.png" }
+            ],
+            comments: [
+              { user: "kai", comment: "Super light and responsive!", stars: 4 },
+              { user: "maya", comment: "Helps me improve my smashes.", stars: 5 },
+              { user: "leo", comment: "Nice grip and power delivery.", stars: 4 },
+              { user: "sophie", comment: "I use it almost daily at the club.", stars: 5 },
+              { user: "jay", comment: "Worth the price for beginners too.", stars: 4 }
+            ]
+          },
+          {
+            id: 27,
+            img: "../img/sports/volleyball.png",
+            name: "Professional Volleyball",
+            price: 699,
+            rating: 5,
+            sold: "1.9k",
+            category: "sports",
+            description: "Designed for professional and recreational play, this volleyball offers great grip and balance. Made from high-quality synthetic leather for durability. Suitable for both indoor and outdoor games.",
+            features: ["Synthetic Leather", "Durable Stitching", "Indoor/Outdoor Use"],
+            sizes: ["Standard"],
+            colors: [
+              { name: "White", code: "#FFFFFF", img: "../img/sports/colors/volleyball-white.png" },
+              { name: "Blue", code: "#1E90FF", img: "../img/sports/colors/volleyball-blue.png" },
+              { name: "Yellow", code: "#FFD700", img: "../img/sports/colors/volleyball-yellow.png" }
+            ],
+            comments: [
+              { user: "ivy", comment: "Super responsive touch and flight!", stars: 5 },
+              { user: "max", comment: "Great for beach and court games.", stars: 5 },
+              { user: "jules", comment: "Looks great and feels premium.", stars: 5 },
+              { user: "rose", comment: "Handles spikes and digs well.", stars: 4 },
+              { user: "ethan", comment: "Best volleyball I’ve owned.", stars: 5 }
+            ]
+          },
+          {
+            id: 28,
+            img: "../img/kids/wooden_blocks.png",
+            name: "Wooden Building Blocks",
+            price: 620.00,
+            rating: 5,
+            sold: "6.7k",
+            category: "kids",
+            description: "High-quality wooden building blocks to spark creativity and improve motor skills in kids. These blocks help in developing fine motor skills, imagination, and problem-solving. A perfect educational toy to enhance early childhood development.",
+            sizes: ["Set of 50", "Set of 100", "Set of 150"],
+            colors: [
+              { name: "Red", code: "#FF0000", img: "../img/kids/colors/blocks-red.png" },
+              { name: "Blue", code: "#0000FF", img: "../img/kids/colors/blocks-blue.png" },
+              { name: "Green", code: "#008000", img: "../img/kids/colors/blocks-green.png" }              
+            ],
+            comments: [
+              { user: "ian", comment: "Endless fun for my son!", stars: 5 },
+              { user: "grace", comment: "Very well-made and safe.", stars: 5 },
+              { user: "jake", comment: "Keeps my kids entertained for hours.", stars: 5 },
+              { user: "lucy", comment: "Great quality and sturdy!", stars: 5 },
+              { user: "olivia", comment: "Perfect for building and learning.", stars: 5 }
+            ]
+          },
+          {
+            id: 29,
+            img: "../img/kids/strawberry_cat_plush.png",
+            name: "Strawberry Cat Plush",
+            price: 460.00,
+            rating: 5,
+            sold: "4.2k",
+            category: "kids",
+            description: "Adorable cat plushie with a strawberry hat. Made with ultra-soft material that’s perfect for cuddling or displaying. A cute companion that your child will love to carry around wherever they go.",
+            sizes: ["One Size"],
+            colors: [
+              { name: "Pink", code: "#FF6F91", img: "../img/kids/colors/strawberry-cat-pink.png" },
+              { name: "Green", code: "#388E3C", img: "../img/kids/colors/strawberry-cat-green.png" },
+              { name: "Purple", code: "#9C27B0", img: "../img/kids/colors/strawberry-cat-purple.png" }
+            ],
+            comments: [
+              { user: "liza", comment: "Super soft and cute!", stars: 5 },
+              { user: "hana", comment: "My kid takes it everywhere!", stars: 5 },
+              { user: "sophia", comment: "Perfect plushie, so soft!", stars: 5 },
+              { user: "emily", comment: "Great gift for my niece.", stars: 5 },
+              { user: "alice", comment: "So cuddly and cute, my daughter loves it.", stars: 5 }
+            ]
+          },
+          {
+            id: 30,
+            img: "../img/kids/dress.png",
+            name: "Checkered Dress",
+            price: 320.00,
+            rating: 4,
+            sold: "3.1k",
+            category: "kids",
+            description: "Charming checkered dress for kids. Lightweight, breathable, and stylish for any occasion. A versatile piece that can be worn for both casual play and formal events.",
+            sizes: ["S", "M", "L"],
+            colors: [
+              { name: "Blue", code: "#3B5998", img: "../img/kids/colors/dress-blue.png" },
+              { name: "Red", code: "#C0392B", img: "../img/kids/colors/dress-red.png" },
+              { name: "Yellow", code: "#F1C40F", img: "../img/kids/colors/dress-yellow.png" }
+            ],
+            comments: [
+              { user: "mia", comment: "My daughter looks so cute in it!", stars: 5 },
+              { user: "ella", comment: "Perfect fit and very comfy.", stars: 4 },
+              { user: "janine", comment: "Nice material and vibrant colors.", stars: 4 },
+              { user: "lucy", comment: "Love how soft and light it feels!", stars: 5 },
+              { user: "amanda", comment: "Perfect for spring and summer!", stars: 5 }
+            ]
+          },
+          {
+            id: 31,
+            img: "../img/kids/teddy_bear.png",
+            name: "Plush Teddy Bear",
+            price: 550.00,
+            rating: 5,
+            sold: "5.4k",
+            category: "kids",
+            description: "Soft and huggable teddy bear perfect for kids and collectors. Made with ultra-soft fabric and filled for maximum cuddles. An ideal gift for your little one or as a cozy addition to their room.",
+            sizes: ["Large"],
+            colors: [
+              { name: "Purple", code: "#B388EB", img: "../img/kids/colors/teddy-purple.png" },
+              { name: "Brown", code: "#A0522D", img: "../img/kids/colors/teddy-brown.png" },
+              { name: "Pink", code: "#FFC0CB", img: "../img/kids/colors/teddy-pink.png" }
+            ],
+            comments: [
+              { user: "sophie", comment: "So cuddly and big!", stars: 5 },
+              { user: "mark", comment: "My niece loves it!", stars: 5 },
+              { user: "james", comment: "Perfect teddy bear for my son!", stars: 5 },
+              { user: "chloe", comment: "Best plush toy ever!", stars: 5 },
+              { user: "susan", comment: "Great quality and super soft!", stars: 5 }
+            ]
+          },
+          {
+            id: 32,
+            img: "../img/kids/overalls.png",
+            name: "Corduroy Overalls Set",
+            price: 480.00,
+            rating: 4,
+            sold: "2.9k",
+            category: "kids",
+            description: "Comfortable and stylish overalls made from soft corduroy fabric. Ideal for playdates or casual days. The soft texture and relaxed fit make it perfect for your little one’s daily adventures.",
+            sizes: ["6M", "12M", "18M"],
+            colors: [
+              { name: "Brown", code: "#A97155", img: "../img/kids/colors/overalls-brown.png" },
+              { name: "Beige", code: "#F5F5DC", img: "../img/kids/colors/overalls-beige.png" },
+              { name: "Light Blue", code: "#ADD8E6", img: "../img/kids/colors/overalls-lightblue.png" }
+            ],
+            comments: [
+              { user: "joey", comment: "Super adorable!", stars: 4 },
+              { user: "rhea", comment: "Love the material.", stars: 4 },
+              { user: "grace", comment: "Perfect for the warmer months.", stars: 4 },
+              { user: "ella", comment: "So comfy for my baby!", stars: 5 },
+              { user: "mason", comment: "Great fit, highly recommend!", stars: 5 }
+            ]
+          },
+          {
+            id: 33,
+            img: "../img/hardware/cuisinart_toaster.png",
+            name: "Cuisinart Toaster",
+            price: 2399,
+            rating: 4,
+            sold: "650",
+            category: "hardware",
+            description: "Sleek and modern toaster with multiple browning levels for your perfect toast. The toaster comes with adjustable settings and a dual-slot design for convenience. Compact and stylish, it’s the perfect addition to any modern kitchen.",
+            features: ["Dual-Slot", "Adjustable Settings"],
+            sizes: ["One Size"],
+            colors: [
+              { name: "Silver", code: "#C0C0C0", img: "../img/hardware/colors/cuisinart_toaster-silver.png" },
+              { name: "Matte Black", code: "#1C1C1C", img: "../img/hardware/colors/cuisinart_toaster-black.png" },
+              { name: "Rose Gold", code: "#B76E79", img: "../img/hardware/colors/cuisinart_toaster-rosegold.png" }
+            ],
+            comments: [
+              { user: "lucas", comment: "Toasts evenly and looks premium!", stars: 4 },
+              { user: "jo", comment: "Good design and functionality.", stars: 4 },
+              { user: "maria", comment: "Perfect for small kitchens. Sleek and efficient.", stars: 5 },
+              { user: "nina", comment: "I love the rose gold color, very elegant.", stars: 5 },
+              { user: "chris", comment: "Makes great toast, but a bit noisy.", stars: 3 }
+            ]
+          },
+          {
+            id: 34,
+            img: "../img/hardware/black_toaster_oven.png",
+            name: "Black Toaster Oven",
+            price: 3799,
+            rating: 5,
+            sold: "740",
+            category: "hardware",
+            description: "Compact toaster oven perfect for baking, toasting, and broiling. With a timer function and non-stick interior, it makes cooking convenient and easy to clean. The sleek black design fits into any kitchen decor seamlessly.",
+            features: ["Timer Function", "Non-Stick Interior"],
+            sizes: ["One Size"],
+            colors: [
+              { name: "Black", code: "#000000", img: "../img/hardware/colors/black_toaster_oven-black.png" },
+              { name: "Stainless", code: "#B0C4DE", img: "../img/hardware/colors/black_toaster_oven-stainless.png" },
+              { name: "Charcoal Grey", code: "#36454F", img: "../img/hardware/colors/black_toaster_oven-charcoal.png" }
+            ],
+            comments: [
+              { user: "chris", comment: "Perfect for quick meals. Heats fast!", stars: 5 },
+              { user: "lynn", comment: "Compact and powerful. Worth the price.", stars: 5 },
+              { user: "jessica", comment: "Great oven for the price, very reliable.", stars: 5 },
+              { user: "daniel", comment: "It’s a bit smaller than expected but works great.", stars: 4 },
+              { user: "lucy", comment: "Love the design, works well for my baking.", stars: 5 }
+            ]
+          },
+          {
+            id: 35,
+            img: "../img/hardware/electric_kettle_with_stainless.png",
+            name: "Electric Kettle",
+            price: 1699,
+            rating: 5,
+            sold: "2.1k",
+            category: "hardware",
+            description: "Fast-boiling electric kettle with a sleek stainless steel finish. The auto shut-off and cordless base make it safe and convenient to use. It’s perfect for boiling water quickly for tea, coffee, or instant meals.",
+            features: ["Auto Shut-Off", "Cordless Base"],
+            sizes: ["1.7L"],
+            colors: [
+              { name: "Steel", code: "#D3D3D3", img: "../img/hardware/colors/electric_kettle-steel.png" },
+              { name: "White", code: "#FFFFFF", img: "../img/hardware/colors/electric_kettle-white.png" },
+              { name: "Black", code: "#000000", img: "../img/hardware/colors/electric_kettle-black.png" }
+            ],
+            comments: [
+              { user: "ivy", comment: "Boils fast and looks sleek!", stars: 5 },
+              { user: "sean", comment: "Easy to clean and use. Great buy!", stars: 5 },
+              { user: "michael", comment: "Fast boiling and solid construction. I love it!", stars: 5 },
+              { user: "sofia", comment: "Perfect kettle for our kitchen. Love the auto shut-off feature.", stars: 5 },
+              { user: "emily", comment: "The black version looks elegant in my kitchen.", stars: 4 }
+            ]
+          },
+          {
+            id: 36,
+            img: "../img/hardware/air_fryer_black.png",
+            name: "Air Fryer",
+            price: 4499,
+            rating: 4,
+            sold: "1.6k",
+            category: "hardware",
+            description: "Healthier way to fry with less oil and more crisp. The non-stick basket and digital display make it user-friendly and easy to clean. Ideal for making crispy fries, chicken, and other fried foods with a healthier twist.",
+            features: ["Non-Stick Basket", "Digital Display"],
+            sizes: ["3.5L"],
+            colors: [
+              { name: "Black", code: "#000000", img: "../img/hardware/colors/air_fryer-black.png" },
+              { name: "White", code: "#F5F5F5", img: "../img/hardware/colors/air_fryer-white.png" },
+              { name: "Red", code: "#FF0000", img: "../img/hardware/colors/air_fryer-red.png" }
+            ],
+            comments: [
+              { user: "tina", comment: "Crispy fries without the guilt!", stars: 4 },
+              { user: "omar", comment: "Best kitchen purchase I've made.", stars: 4 },
+              { user: "matt", comment: "Perfect for cooking quick meals!", stars: 5 },
+              { user: "nina", comment: "Makes food crispy and tasty without oil.", stars: 5 },
+              { user: "alex", comment: "I love the digital controls. So easy to use.", stars: 4 }
+            ]
+          },
+          {
+            id: 37,
+            img: "../img/hardware/samsung_smart_fridge.png",
+            name: "Samsung Smart Fridge",
+            price: 52999,
+            rating: 5,
+            sold: "520",
+            category: "hardware",
+            description: "Smart refrigerator with touchscreen and Wi-Fi features. The smart display allows you to control your fridge remotely, and the ice maker is perfect for family gatherings. It’s energy efficient and a perfect fit for modern kitchens.",
+            features: ["Smart Display", "Ice Maker", "Energy Efficient"],
+            sizes: ["20 cu. ft."],
+            colors: [
+              { name: "Steel", code: "#DCDCDC", img: "../img/hardware/colors/samsung_fridge-steel.png" },
+              { name: "Black Stainless", code: "#2F4F4F", img: "../img/hardware/colors/samsung_fridge-blacksteel.png" },
+              { name: "Bright White", code: "#FFFFFF", img: "../img/hardware/colors/samsung_fridge-white.png" }
+            ],
+            comments: [
+              { user: "hana", comment: "Amazing tech! I love the display panel.", stars: 5 },
+              { user: "dev", comment: "Makes life easier and looks amazing.", stars: 5 },
+              { user: "sarah", comment: "Perfect fridge for a tech-savvy family.", stars: 5 },
+              { user: "lucas", comment: "I love the energy-saving feature!", stars: 5 },
+              { user: "chris", comment: "Worth every penny. Excellent fridge.", stars: 5 }
+            ]
+          },
+          {
+            id: 38,
+            img: "../img/hardware/best_buy_whirlpool_stove.png",
+            name: "Whirlpool Electric Stove",
+            price: 24999,
+            rating: 4,
+            sold: "690",
+            category: "hardware",
+            description: "Modern electric stove with smooth ceramic cooktop and touch controls. Offers even heat distribution and energy efficiency for daily cooking. A reliable centerpiece for any contemporary kitchen.",
+            features: ["Ceramic Cooktop", "5 Burners", "Touch Controls"],
+            sizes: ["Standard"],
+            colors: [
+              { name: "White", code: "#FFFFFF", img: "../img/hardware/colors/whirlpool_stove-white.png" },
+              { name: "Black", code: "#000000", img: "../img/hardware/colors/whirlpool_stove-black.png" },
+              { name: "Slate Grey", code: "#708090", img: "../img/hardware/colors/whirlpool_stove-slate.png" }
+            ],
+            comments: [
+              { user: "keira", comment: "Even heating and easy to clean!", stars: 4 },
+              { user: "jon", comment: "Perfect upgrade for my kitchen.", stars: 4 },
+              { user: "annie", comment: "Love the smooth top surface—so easy to wipe down.", stars: 5 },
+              { user: "travis", comment: "Looks great and cooks evenly. Happy with the purchase.", stars: 4 },
+              { user: "mia", comment: "Wish it had more color options, but performance is solid.", stars: 4 }
+            ]
+          },
+          {
+            id: 39,
+            img: "../img/home/mattress.png",
+            name: "Comfort Mattress",
+            price: 5999,
+            rating: 4,
+            sold: "870",
+            category: "home",
+            description: "High-quality foam mattress designed to provide excellent body support and pressure relief. The breathable fabric keeps you cool and comfortable throughout the night. Ideal for all types of sleepers looking for restful sleep.",
+            features: ["Memory Foam", "Breathable Fabric"],
+            sizes: ["Single", "Double", "Queen", "King"],
+            colors: [
+              { name: "White", code: "#FFFFFF", img: "../img/home/colors/mattress-white.png" },
+              { name: "Grey", code: "#D3D3D3", img: "../img/home/colors/mattress-grey.png" },
+              { name: "Charcoal", code: "#36454F", img: "../img/home/colors/mattress-charcoal.png" }
+            ],
+            comments: [
+              { user: "alex", comment: "Very comfortable! I sleep better now.", stars: 4 },
+              { user: "ken", comment: "Good quality for the price. Would recommend.", stars: 4 },
+              { user: "rachel", comment: "Supportive yet soft—just what I needed.", stars: 5 },
+              { user: "daniel", comment: "Took a few days to adjust, but now it’s perfect.", stars: 4 },
+              { user: "ivy", comment: "No more back pain in the mornings!", stars: 5 }
+            ]
+          },
+          {
+            id: 40,
+            img: "../img/home/blanket.png",
+            name: "Cozy Blanket",
+            price: 1299,
+            rating: 5,
+            sold: "2.3k",
+            category: "home",
+            description: "Experience warmth and softness like never before with this cozy blanket. It's perfect for cold nights, lounging on the couch, or snuggling in bed. Durable and easy to wash for everyday comfort.",
+            features: ["Ultra Soft", "Machine Washable"],
+            sizes: ["Twin", "Full", "Queen"],
+            colors: [
+              { name: "Beige", code: "#F5F5DC", img: "../img/home/colors/blanket-beige.png" },
+              { name: "Navy Blue", code: "#000080", img: "../img/home/colors/blanket-navyblue.png" },
+              { name: "Wine Red", code: "#722F37", img: "../img/home/colors/blanket-red.png" }
+            ],
+            comments: [
+              { user: "claire", comment: "So soft and warm, I love it!", stars: 5 },
+              { user: "ryan", comment: "Perfect size and doesn’t shed!", stars: 5 },
+              { user: "harper", comment: "It keeps me warm without being too heavy.", stars: 5 },
+              { user: "noah", comment: "Feels luxurious and washes well.", stars: 5 },
+              { user: "ella", comment: "Everyone in the family wants one now!", stars: 5 }
+            ]
+          },
+          {
+            id: 41,
+            img: "../img/home/garfield_pillow.png",
+            name: "Garfield Pillow",
+            price: 699,
+            rating: 4,
+            sold: "1.1k",
+            category: "home",
+            description: "Add some fun to your space with this Garfield-themed pillow. It’s soft, squishy, and full of personality—just like the famous cat himself. Great for both kids and nostalgic adults.",
+            features: ["Soft Plush", "Cartoon Print"],
+            sizes: ["Standard"],
+            colors: [
+              { name: "Orange", code: "#FFA500", img: "../img/home/colors/garfield_pillow-orange.png" },
+              { name: "Cream", code: "#FFFDD0", img: "../img/home/colors/garfield_pillow-cream.png" },
+              { name: "Light Yellow", code: "#FFFACD", img: "../img/home/colors/garfield_pillow-yellow.png" }
+            ],
+            comments: [
+              { user: "mia", comment: "Super cute! My kid loves it.", stars: 4 },
+              { user: "eli", comment: "Great pillow and fun design.", stars: 4 },
+              { user: "tom", comment: "Perfect gift for Garfield fans.", stars: 5 },
+              { user: "ivy", comment: "Comfy and just the right size for lounging.", stars: 4 },
+              { user: "sasha", comment: "A fun addition to my couch setup.", stars: 5 }
+            ]
+          },
+          {
+            id: 42,
+            img: "../img/home/black_cat_plush.png",
+            name: "Cat Plush",
+            price: 399,
+            rating: 5,
+            sold: "3.5k",
+            category: "home",
+            description: "This adorable plush black cat is perfect for cuddling or decorating your living space. Its soft texture and charming design make it a favorite among kids and cat lovers. A cozy companion for any age.",
+            features: ["Soft Material", "Cute Design"],
+            sizes: ["Small", "Medium"],
+            colors: [
+              { name: "Black", code: "#000000", img: "../img/home/colors/black_cat_plush-black.png" },
+              { name: "Gray", code: "#808080", img: "../img/home/colors/black_cat_plush-gray.png" },
+              { name: "Lavender", code: "#E6E6FA", img: "../img/home/colors/black_cat_plush-lavender.png" }
+            ],
+            comments: [
+              { user: "luna", comment: "So soft and huggable!", stars: 5 },
+              { user: "kai", comment: "Looks great on my bed!", stars: 5 },
+              { user: "zoe", comment: "My daughter carries it everywhere.", stars: 5 },
+              { user: "jude", comment: "Softest plush toy we've bought so far.", stars: 5 },
+              { user: "ivy", comment: "Great gift idea for kids or cat lovers.", stars: 5 }
+            ]
+          },
         
+          {
+            id: 43,
+            img: "../img/dailysupplies/pastel_notebooks.png",
+            name: "Pastel Colored Notebook Set",
+            price: 499,
+            rating: 4,
+            sold: "2.8k",
+            category: "dailysupplies",
+            description: "Aesthetic pastel notebook set perfect for journaling, note-taking, and organizing. Smooth paper with sturdy covers in various calming colors. Comes in a pack of assorted shades.",
+            features: ["Set of 10", "Smooth Paper", "Soft Covers"],
+            sizes: ["A5"],
+            colors: [
+              { name: "Pink", code: "#FFC0CB", img: "../img/dailysupplies/colors/notebook-pink.png" },
+              { name: "Blue", code: "#ADD8E6", img: "../img/dailysupplies/colors/notebook-blue.png" },
+              { name: "Green", code: "#90EE90", img: "../img/dailysupplies/colors/notebook-green.png" }
+            ],
+            comments: [
+              { user: "nina", comment: "So cute and useful for school!", stars: 4 },
+              { user: "marc", comment: "Love the pastel shades. Very aesthetic.", stars: 4 },
+              { user: "ivy", comment: "Nice quality paper and binding.", stars: 4 },
+              { user: "luke", comment: "Great for my planner and notes.", stars: 4 },
+              { user: "amy", comment: "Perfect size and easy to carry around.", stars: 5 }
+            ]
+          },
+          {
+            id: 44,
+            img: "../img/dailysupplies/pencil_case.png",
+            name: "Pencil Case",
+            price: 499,
+            rating: 4,
+            sold: "1.8k",
+            category: "dailysupplies",
+            description: "Stylish and compact pencil case for organizing pens, pencils, and small tools. Features an outer pocket for easy access. Made of durable canvas material.",
+            features: ["Canvas Material", "Zipper Closure", "Front Pocket"],
+            sizes: ["One Size"],
+            defaultColor: "Green",
+            colors: [
+              { name: "Green", code: "#A9B89E", img: "../img/dailysupplies/colors/pencil_case-green.png" },
+              { name: "Pink", code: "#FFB6C1", img: "../img/dailysupplies/colors/pencil_case-pink.png" },
+              { name: "Gray", code: "#D3D3D3", img: "../img/dailysupplies/colors/pencil_case-gray.png" }
+            ],
+            comments: [
+              { user: "nina", comment: "Holds all my pens perfectly!", stars: 4 },
+              { user: "jacob", comment: "Simple but practical.", stars: 4 },
+              { user: "zara", comment: "Love the outer pocket design.", stars: 4 },
+              { user: "keith", comment: "Feels sturdy and well-made.", stars: 4 },
+              { user: "amy", comment: "Fits nicely in my backpack.", stars: 4 }
+            ]
+          },
+          {
+            id: 45,
+            img: "../img/dailysupplies/yarn_balls_set.png",
+            name: "Soft Yarn Set",
+            price: 349,
+            rating: 5,
+            sold: "2.4k",
+            category: "dailysupplies",
+            description: "Pack of soft, colorful yarn balls perfect for knitting and crochet. Great texture and easy to work with for beginners and experts. Includes three versatile shades.",
+            features: ["3 Colors", "Soft Texture", "Tangle-Free"],
+            sizes: ["Small Skeins"],
+            defaultColor: "Brown",
+            colors: [
+              { name: "Brown", code: "#8B4513", img: "../img/dailysupplies/colors/yarn-brown.png" },
+              { name: "Cream", code: "#FAF0E6", img: "../img/dailysupplies/colors/yarn-cream.png" },
+              { name: "Yellow", code: "#F0E68C", img: "../img/dailysupplies/colors/yarn-yellow.png" }
+            ],
+            comments: [
+              { user: "leo", comment: "Really soft and doesn’t tangle.", stars: 5 },
+              { user: "mira", comment: "Love the color combo!", stars: 5 },
+              { user: "ben", comment: "Perfect for baby blankets.", stars: 5 },
+              { user: "faye", comment: "Will order again for sure.", stars: 5 },
+              { user: "noah", comment: "Nice quality yarn for the price.", stars: 5 }
+            ]
+          },
+          {
+            id: 46,
+            img: "../img/dailysupplies/earmuffs.png",
+            name: "Cozy Winter Earmuffs",
+            price: 599,
+            rating: 4,
+            sold: "980",
+            category: "dailysupplies",
+            description: "Keep your ears warm in style with these fluffy earmuffs. Soft and lightweight with an adjustable headband. A perfect winter essential.",
+            features: ["Faux Fur", "Adjustable Band", "Warm & Lightweight"],
+            sizes: ["One Size"],
+            defaultColor: "White",
+            colors: [
+              { name: "White", code: "#FFF5E1", img: "../img/dailysupplies/colors/earmuffs-white.png" },
+              { name: "Beige", code: "#D2B48C", img: "../img/dailysupplies/colors/earmuffs-beige.png" },
+              { name: "Gray", code: "#BEBEBE", img: "../img/dailysupplies/colors/earmuffs-gray.png" }
+            ],
+            comments: [
+              { user: "sophia", comment: "Super soft and warm!", stars: 4 },
+              { user: "jack", comment: "Looks great with any winter outfit.", stars: 4 },
+              { user: "hannah", comment: "Comfy for long walks in the cold.", stars: 4 },
+              { user: "owen", comment: "Surprisingly durable.", stars: 4 },
+              { user: "ivy", comment: "Exactly what I needed this season.", stars: 4 }
+            ]
+          }      
     ];
 
     return products;

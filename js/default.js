@@ -1,6 +1,8 @@
 import { Products } from "./allProduct.js";
 
 const products = Products();
+let usersSession = JSON.parse(localStorage.getItem('loggedUsers')) || []; 
+const notiLocal = JSON.parse(localStorage.getItem('Notifications')) || [];
 
 const notif = document.getElementById('notification');
 const dropNoti = document.getElementById('dropdown-noti');
@@ -10,7 +12,6 @@ const dropProfile = document.getElementById('dropdown-profile');
 const logout = document.getElementById('profile-logout');
 const profileName = document.getElementById('profileName');
 
-const usersSession = JSON.parse(localStorage.getItem('loggedUsers')) || []; 
 const searchToggle = document.getElementById('searchi');
 const navi = document.getElementById('navi');
 const searnav = document.getElementById('searnav');
@@ -23,12 +24,44 @@ const buti = document.getElementById('buti');
 const popup = document.getElementById('popup');
 const closepopup = document.getElementById('closepopup');
 const overlay = document.getElementById('overlay');
-//profileName.innerHTML = usersSession.email;
+
+const noti = document.getElementById('noti');
+const notiBadge = document.getElementById('noti-badge');
+const profilenav = document.getElementById('profile-nav');
+
+profilenav.addEventListener('click', () => {
+  window.location.href = './received-items.html?page=Profile';
+});
+
+// Notifications
+if (usersSession.userId && !Array.isArray(usersSession)) {
+  usersSession = [usersSession]; 
+}
+let userId = usersSession[0]?.userId;
+
+const usersNoti = notiLocal.filter(notis => notis.user === userId);
+console.log(usersNoti);
+
+if (usersNoti) {
+  usersNoti.forEach(notifi => {
+    noti.innerHTML += `<p>${notifi.message}</p>`;
+
+  });
+
+} 
+
+if (usersNoti.length === 0) {
+  notiBadge.textContent = 1;
+} else {
+  notiBadge.textContent = usersNoti.length + 1;
+}
 
 // profile Founder
 buti.addEventListener('click', () => {
   popup.style.display = 'flex';
   overlay.style.display = 'flex';
+  dropNoti.style.display = 'none';
+  dropProfile.style.display = 'none';
 });
 closepopup.addEventListener('click', () => {
   popup.style.display = 'none';
@@ -80,6 +113,7 @@ notif.addEventListener('click',() => {
     if (dropNoti.style.display === 'none') {
         dropNoti.style.display = 'block';
         dropProfile.style.display = 'none';
+
     } else {
         dropNoti.style.display = 'none';
     }
@@ -90,11 +124,15 @@ profile.addEventListener('click', () => {
     if (dropProfile.style.display === 'none') {
         dropProfile.style.display = 'block';
         dropNoti.style.display = 'none';
+
     } else {
            dropProfile.style.display = 'none';
+           
     }
 });
+
 const loggedUser = JSON.parse(localStorage.getItem('loggedUsers'));
+console.log("Logged User:")
 console.log(loggedUser); 
 logout.addEventListener('click', () => {
     localStorage.removeItem('loggedUsers');
@@ -104,5 +142,6 @@ logout.addEventListener('click', () => {
 });
 
 console.log("Selected:\n"+localStorage.getItem('selectedProduct'));
-console.log("Order:\n"+localStorage.getItem('userOrder'));
+console.log('Notifications: ')
+console.log(notiLocal);
 

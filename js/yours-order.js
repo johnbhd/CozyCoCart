@@ -7,9 +7,57 @@ const userOrder = JSON.parse(localStorage.getItem('userOrder')) || [];
 const ewalletBalace = document.getElementById('wallet-balance');
 const orderDiv = document.querySelector('.orderUser');
 const users = JSON.parse(localStorage.getItem('users'));
+
 let findUser = users.find(user => user.userId === loggedUser.userId);
+
 orderDiv.innerHTML = '';
 const tabs = document.querySelectorAll('.status-tab');
+
+const widthdraw = document.getElementById('withdraw-amount');
+const addmoney = document.getElementById('addmoney');
+const addFundsBut = document.getElementById('addFunds');
+let addBalance = 0;
+let UpdateMoney = 0;
+let notifi = [];
+
+function addFunds() {
+  UpdateMoney = parseInt(findUser.money + addBalance);
+  console.log(UpdateMoney);
+  findUser.money = UpdateMoney;
+  alert(`Success! You have withdrawn ₱${addBalance}. new Balance: ₱${UpdateMoney}`);
+  localStorage.setItem('users', JSON.stringify(users));
+
+  const noti = JSON.parse(localStorage.getItem('Notifications')) || [];
+
+  if (Array.isArray(noti)) {
+    notifi = noti; 
+  }
+
+  notifi.push({
+      message: `✅ Transaction Complete! Old Balance: ₱${findUser.money}, Withdrawn: ₱${addBalance}, New Balance: ₱${UpdateMoney}`,
+      timestamp: new Date().toString(),
+      user: findUser.userId
+  });
+  localStorage.setItem('Notifications', JSON.stringify(notifi));
+
+  location.reload();
+}
+
+widthdraw.addEventListener('input', () => {
+
+  addmoney.textContent = widthdraw.value;
+  addBalance = parseInt(widthdraw.value);
+});
+
+addFundsBut.addEventListener('click', addFunds);
+widthdraw.addEventListener('keypress', (e) => {
+  if (e.key === "Enter") {
+    addFunds();
+  }
+});
+
+console.log(findUser.money);
+
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {

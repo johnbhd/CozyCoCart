@@ -304,16 +304,16 @@ selectedQuantity = isNaN(value) || value < 1 ? 1 : value;
 
 // Buy Now
 function BuyNow() {
-const currentUserId = JSON.parse(localStorage.getItem('currentUserId')) || [];
+    const currentUserId = JSON.parse(localStorage.getItem('currentUserId')) || [];
 
-localStorage.setItem('selectedProduct', JSON.stringify({
-    name: productFind.name,
-    color: selectedColor,
-    size: selectedSize,
-    selectQuantity: selectedQuantity,
-    orderId: currentUserId
-}));
-window.location.href = `basket-page.html?name=${encodeURIComponent(productFind.name)}`;
+    localStorage.setItem('selectedProduct', JSON.stringify({
+        name: productFind.name,
+        color: selectedColor,
+        size: selectedSize,
+        selectQuantity: selectedQuantity,
+        orderId: currentUserId
+    }));
+    window.location.href = `basket-page.html?name=${encodeURIComponent(productFind.name)}`;
 
 }
 console.log(selectedQuantity);
@@ -321,30 +321,48 @@ console.log(selectedColor);
 console.log(selectedSize);
 
 function AddtoCart() {
-const currentUserId = JSON.parse(localStorage.getItem('currentUserId')) || [];
+    const currentUserId = JSON.parse(localStorage.getItem('currentUserId')) || [];
 
-let AddtoCart = [];
+    let AddtoCart = [];
+    let notifi = [];
 
-try {
-    const storedOrders = JSON.parse(localStorage.getItem('AddtoCart')) || [];
-    if (Array.isArray(storedOrders)) {
-        AddtoCart = storedOrders; 
+    try {
+        const storedOrders = JSON.parse(localStorage.getItem('AddtoCart')) || [];
+        if (Array.isArray(storedOrders)) {
+            AddtoCart = storedOrders; 
+        }
+
+        const storedNotifications = JSON.parse(localStorage.getItem('Notifications')) || [];
+        if (Array.isArray(storedNotifications)) {
+            notifi = storedNotifications; 
+        }
+    } catch (e) {
+        console.warn(e);
     }
-} catch (e) {
-    console.warn(e);
-}
 
-AddtoCart.push({
-    name: productFind.name,
-    color: selectedColor,
-    size: selectedSize,
-    selectQuantity: selectedQuantity,
-    orderId: currentUserId
-});
-localStorage.setItem('AddtoCart', JSON.stringify(AddtoCart));
+    const newItems = {
+        name: productFind.name,
+        color: selectedColor,
+        size: selectedSize,
+        selectQuantity: selectedQuantity,
+        orderId: currentUserId
+    };
+    
+    const notiItem = {
+        message: `🛒 ${newItems.name} has been added to your cart!`,
+        timestamp: new Date().toString(),
+        user: currentUserId
+    };
 
-window.location.href = `./received-items.html?page=cart`;
-localStorage.removeItem('selectedProduct');
+    AddtoCart.push(newItems);
+    notifi.push(notiItem);
+
+    
+    localStorage.setItem('AddtoCart', JSON.stringify(AddtoCart));
+    localStorage.setItem('Notifications', JSON.stringify(notifi));
+    
+    window.location.href = `./received-items.html?page=cart`;
+    localStorage.removeItem('selectedProduct');
 }
 
 

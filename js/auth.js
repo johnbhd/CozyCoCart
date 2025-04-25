@@ -42,8 +42,16 @@ function Login(event) {
 }
 
 // Sign up
-function SignUp() {
-    const signupInputs = document.querySelectorAll('input');
+function SignUp(event) {
+    event.preventDefault(); 
+    const form = document.getElementById('SignupForm');
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    const signupInputs = form.querySelectorAll('input');
     const userSignup = {};
 
     signupInputs.forEach(signupUser => {
@@ -54,10 +62,10 @@ function SignUp() {
 
     userSignup.address = null;
     userSignup.contact = null;
-    userSignup.fullname = null
+    userSignup.fullname = null;
     userSignup.money = randomMoney;
     userSignup.userId = Date.now();
-    userSignup.role = 'user'; // Assign default role as 'user'
+    userSignup.role = 'user'; // Assign default role
 
     alert('Sign Up Successfully!');
 
@@ -65,6 +73,7 @@ function SignUp() {
     dataUser.push(userSignup);
 
     localStorage.setItem('users', JSON.stringify(dataUser));
+    location.reload();
 }
 
 // default user with roles
@@ -80,18 +89,18 @@ function DefaultUser() {
                 fullName: null,
                 money: 1000,
                 userId: 1678901000000,
-                role: 'user', // User role
+                role: 'user', 
             },
             {
-                username: "john",
-                email: "john@gmail.com",
-                password: "john123",
+                username: "admin",
+                email: "admin@gmail.com",
+                password: "admin123",
                 address: null,
                 contact: null,
                 fullName: null,
                 money: 1500,
                 userId: 1678902000000,
-                role: 'admin', // Admin role
+                role: 'admin', 
             },
             {
                 username: "camile",
@@ -102,7 +111,7 @@ function DefaultUser() {
                 fullName: null,
                 money: 1200,
                 userId: 1678903000000,
-                role: 'user', // User role
+                role: 'user', 
             },
             {
                 username: "marco",
@@ -113,7 +122,7 @@ function DefaultUser() {
                 fullName: null,
                 money: 1300,
                 userId: 1678904000000,
-                role: 'user', // User role
+                role: 'user', 
             },
             {
                 username: "jordan",
@@ -124,7 +133,7 @@ function DefaultUser() {
                 fullName: null,
                 money: 1100,
                 userId: 1678905000000,
-                role: 'user', // User role
+                role: 'user', 
             },
             {
                 username: "louise",
@@ -135,7 +144,7 @@ function DefaultUser() {
                 fullName: null,
                 money: 1400,
                 userId: 1678906000000,
-                role: 'user', // User role
+                role: 'user',
             }
         ];
           localStorage.setItem('users', JSON.stringify(defaultUsers));

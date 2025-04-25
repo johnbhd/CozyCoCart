@@ -224,6 +224,9 @@ function Gcashing(fullName, contact, address) {
     const wallet = document.getElementById('ewallet');
     const butgcashing = document.getElementById('gcashbut');
     const amount = document.querySelectorAll('.Amount');
+    const usernum = document.getElementById('usernum');
+
+    usernum.textContent = findUser.contact
 
     butgcashing.textContent = `Send Php ${totalPrice}`;
     wallet.textContent = `₱ ${findUser.money}`;
@@ -296,11 +299,17 @@ function PlaceOrder(fullName, contact, address) {
     }
 
     let userOrder = [];
-    
+    let notifi = [];
+
     try {
         const storedOrders = JSON.parse(localStorage.getItem('userOrder')) || [];
         if (Array.isArray(storedOrders)) {
             userOrder = storedOrders; 
+        }
+
+        const storedNotifications = JSON.parse(localStorage.getItem('Notifications')) || [];
+        if (Array.isArray(storedNotifications)) {
+            notifi = storedNotifications; 
         }
     } catch (e) {
         console.warn(e);
@@ -319,6 +328,11 @@ function PlaceOrder(fullName, contact, address) {
         contact: contact,
         address: address,
     });
+    notifi.push({
+        message: `✅ Your order for ${selectedProduct.name} was successfully placed using ${paymentMethod}! Thank you! 🎉`,
+        timestamp: new Date().toString(),
+        user: findUser.userId
+    });
 
     const cartItems = JSON.parse(localStorage.getItem('AddtoCart')) || [];
     const updatedCart = cartItems.filter(
@@ -327,6 +341,7 @@ function PlaceOrder(fullName, contact, address) {
 
     localStorage.setItem('AddtoCart', JSON.stringify(updatedCart));
     localStorage.setItem('userOrder', JSON.stringify(userOrder));
+    localStorage.setItem('Notifications', JSON.stringify(notifi));
 
     window.location.href = `./received-items.html`;
     localStorage.removeItem('selectedProduct');

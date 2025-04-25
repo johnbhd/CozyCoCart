@@ -53,9 +53,9 @@
 </style> 
 <body>
   <div class="con-wrapper"> 
-      <!--NAV-->
-      <header>
-        
+       <!--NAV-->
+       <header>
+        <div id="overlay"></div>
         <nav class="searnav" id="searnav">
           <img src="./img/logo.jpg" alt="" id="logo"> 
           <div class="search">
@@ -68,18 +68,17 @@
           <div class="logos" id="buti">
             <img src="./img/logo.jpg" alt="logo" id="logo">
           </div>
-          <div id="overlay"></div>
-
+          
           <div id="popup" role="dialog" aria-modal="true">
             <div class="popDiv">
               <img src="./img/logo.jpg" alt="CozyCoCart Logo" id="logos">
-          
-              <h2 class="brand-title">CozyCoCart</h2>
+              
+              <h1 class="brand-title">CozyCoCart</h1>
               <p class="brand-description">
                 <b>CozyCoCart</b> is a simple and cozy eCommerce platform that provides a seamless shopping experience with intuitive cart management and efficient product and order management. Designed for small-to-medium-sized businesses, it offers a lightweight, easy-to-use solution that creates a comfortable and inviting shopping journey for every user.
               </p>
-          
-              <h3 class="founder-title">Founder</h3>
+              
+              <h3 class="founder-title">Founders</h3>
               <div class="founder-section">
                 <div class="founder-card">
                   <img src="./img/others/profile.jfif" alt="Founder JB">
@@ -99,38 +98,42 @@
               </div>
               <div id="closepopup">
                 <i class="fa-solid fa-xmark close-btn"></i>
-
+                
               </div>
             </div>
           </div>
 
             <h2>CozyCoCart</h2>
-            <div class="search">
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
-              <input type="text" class="search-input" placeholder="Search...">
-              <ul class="suggestions"></ul>
-            </div>   
-            
-            <div class="nav-field">
-              <div class="searchi" id="searchi">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
-              <a href="./received-items.html" title="Cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </a>
-              <div class="nav-item" title="Notifications" id="notification">
+    
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search...">
+            <ul class="suggestions"></ul>
+          </div>   
+          
+          <div class="nav-field">
+            <div class="searchi" id="searchi">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <a href="./received-items.html" title="Cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <div class="nav-item" title="Notifications" id="notification">
+              <div class="nav-items">
                 <i class="fa-solid fa-bell"></i>
-                <div class="dropdown-noti" id="dropdown-noti">
-                  <h4>Notifications</h4>
-                  <hr>
-                  <div class="noti">
-                    <p>"No new notifications at the moment."</p>
-                  </div>
+                <span class="noti-badge" id="noti-badge"></span>
+              </div>
+              <div class="dropdown-noti" id="dropdown-noti">
+                <h4>Notifications</h4>
+                <hr>
+                <div class="noti" id="noti">
+                  <p>Hey there! We're so glad you're here — welcome to CozyCoCart 🎉</p>
                 </div>
               </div>
-              <div class="nav-item" title="Profile" id="profiles">
-                <i class="fa-solid fa-circle-user user-profile"></i>
-                <div class="dropdown-profile" id="dropdown-profile">
+            </div>
+            <div class="nav-item" title="Profile" id="profiles">
+              <i class="fa-solid fa-circle-user user-profile"></i>
+              <div class="dropdown-profile" id="dropdown-profile">
                 <h4>Profile</h4>
                 <div class="profileNav">
                   <div id="profile-nav">Profile</div>
@@ -139,6 +142,7 @@
               </div>
             </div>
           </div>
+ 
           
         </nav>
         <div class="topnav" id="myTopnav">
@@ -154,7 +158,7 @@
               <a href="category-page.html?category=hardware">Hardware</a>
               <a href="category-page.html?category=daily-supplies">Daily Supplies</a>
               <a href="category-page.html?category=kids">Kidz Zone</a>
-              <a href="category-page.html?category=home-living">Home & Living</a>
+              <a href="category-page.html?category=home">Home & Living</a>
               <a href="category-page.html?category=sports">Sports</a>
             </div>
           </div>
@@ -163,29 +167,37 @@
       </header>
     <!--Your Orders--> 
     <div class="your-orders">
-       <!-- Optional icon -->
       <div class="headerOrder">
       </div>
       <br><hr>
       <div class="orders-header">
-        <div class="rows current" onclick="showSection('orders', this)">
-          <i class="fa-solid fa-book"></i>
-          <h4>Orders</h4>
+        <div class="rows current">
+          <a href="?page=orders">
+            <i class="fa-solid fa-book"></i>
+            <h4>Orders</h4>
+          </a>
         </div>
-        <div class="rows" onclick="showSection('cart', this)">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <h4>Cart</h4>
+        <div class="rows">
+          <a href="?page=cart" >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h4>Cart</h4>
+          </a>
         </div>
-        <div class="rows" onclick="showSection('wallet', this)">
-          <i class="fa-solid fa-wallet"></i>
-          <h4>Wallet</h4>
+        <div class="rows">
+          <a href="?page=wallet" >
+            <i class="fa-solid fa-wallet"></i>
+            <h4>Wallet</h4>
+          </a>
         </div>
-        <div class="rows" onclick="showSection('Profile', this)">
-          <i class="fa-solid fa-circle-user " style="font-size: 1.6rem;"></i>
-          <h4>Profile</h4>
+        <div class="rows">
+          <a href="?page=Profile" >
+            <i class="fa-solid fa-circle-user" style="font-size: 1.6rem;"></i>
+            <h4>Profile</h4>
+          </a>
         </div>
       </div>
     </div>
+    
   <!-- Orders Section -->
   <div id="orders" class="section current">
     <div class="header-orders">
@@ -216,21 +228,28 @@
   <!-- Wallet -->
   <div id="wallet" class="section">
     <div class="wallet-sec">
+
       <div class="wallet-card">
         <div class="wallet-icon">💵</div>
         <div class="wallet-title">Balance</div>
-        <div class="wallet-balance" id="wallet-balance"></div>
-        <button class="wallet-button" onclick="addFunds()">Add $50</button>
+        <div class="wallet-balance" id="wallet-balance">₱0.00</div>
       </div>
-    
+
       <div class="wallet-card">
         <div class="wallet-icon wallet-icon-gcash">📱</div>
-        <div class="wallet-title">Pay with G-Wallet</div>
-        <div class="wallet-description">Use G-Wallet to add funds or pay for your purchases securely.</div>
-        <button class="wallet-button wallet-button-outline" onclick="payWithGcash()">Connect GCash</button>
-      </div>
+        <div class="wallet-title">Withdraw E-Money</div>
+
+        <div class="wallet-withdraw">
+          <span class="peso-sign">₱</span>
+          <input type="number" id="withdraw-amount" placeholder="Enter amount" min="5" max="1000"/>
+        </div>
+
+        <button class="wallet-button" id="addFunds">Add ₱ <span id="addmoney">0</span></button>
+        </div>
+  
     </div>
   </div>
+  
   <!-- Profile -->
   <div id="Profile" class="section">
     <div class="profile-sec">
@@ -285,7 +304,7 @@
       <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
   </footer>
 </body>
-<script src="./js/noti.js"></script>
+<script src="./js/section.js"></script>
 <script type="module" src="./js/yours-order.js"></script>
 <script type="module" src="./js/default.js"></script>
 </html>
