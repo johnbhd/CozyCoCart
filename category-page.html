@@ -56,118 +56,119 @@
 
   <body>
     <div class="con-wrapper">
-      <!--NAV-->
-      <header>
-        <div id="overlay"></div>
-        <nav class="searnav" id="searnav">
-          <img src="./img/logo.jpg" alt="" id="logo"> 
-          <div class="search">
-            <input type="text" class="search-input" placeholder="Search...">
-            <i class="fa-solid fa-xmark search-btn" id="searchClose"></i>
-            <ul class="suggestions"></ul>
-          </div>
-        </nav>
-        <nav class="navi" id="navi">
-          <div class="logos" id="buti">
-            <img src="./img/logo.jpg" alt="logo" id="logo">
-          </div>
-          
-          <div id="popup" role="dialog" aria-modal="true">
-            <div class="popDiv">
-              <img src="./img/logo.jpg" alt="CozyCoCart Logo" id="logos">
+    <!--NAV-->
+    <header>
+      <div id="overlay"></div>
+      <nav class="searnav" id="searnav">
+        <img src="./img/logo.jpg" alt="" id="logo"> 
+        <div class="search">
+          <input type="text" class="search-input" placeholder="Search...">
+          <i class="fa-solid fa-xmark search-btn" id="searchClose"></i>
+          <ul class="suggestions"></ul>
+        </div>
+      </nav>
+      <nav class="navi" id="navi">
+        <div class="logos" id="buti">
+          <img src="./img/logo.jpg" alt="logo" id="logo">
+        </div>
+        
+        <div id="popup" role="dialog" aria-modal="true">
+          <div class="popDiv">
+            <img src="./img/logo.jpg" alt="CozyCoCart Logo" id="logos">
+            
+            <h1 class="brand-title">CozyCoCart</h1>
+            <p class="brand-description">
+              <b>CozyCoCart</b> is a simple and cozy eCommerce platform that provides a seamless shopping experience with intuitive cart management and efficient product and order management. Designed for small-to-medium-sized businesses, it offers a lightweight, easy-to-use solution that creates a comfortable and inviting shopping journey for every user.
+            </p>
+            
+            <h3 class="founder-title">Founders</h3>
+            <div class="founder-section">
+              <div class="founder-card">
+                <img src="./img/others/profile.jfif" alt="Founder JB">
+                <h4>JB</h4>
+                <p>"At CozyCoCart, we focus on building simplicity and comfort in every cart, making the shopping process cozy, easy, and enjoyable!"</p>
+              </div>
+              <div class="founder-card">
+                <img src="./img/others/profile.jfif" alt="Founder Francis">
+                <h4>Francis</h4>
+                <p>"For us, 'Cozy' means making every step of shopping comfortable, ensuring seamless experiences from beginning to end!"</p>
+              </div>
+              <div class="founder-card">
+                <img src="./img/others/profile.jfif" alt="Founder Mai">
+                <h4>Mai</h4>
+                <p>"With CozyCoCart, shopping feels like home, bringing warmth and familiarity to every transaction!"</p>
+              </div>
+            </div>
+            <div id="closepopup">
+              <i class="fa-solid fa-xmark close-btn"></i>
               
-              <h1 class="brand-title">CozyCoCart</h1>
-              <p class="brand-description">
-                <b>CozyCoCart</b> is a simple and cozy eCommerce platform that provides a seamless shopping experience with intuitive cart management and efficient product and order management. Designed for small-to-medium-sized businesses, it offers a lightweight, easy-to-use solution that creates a comfortable and inviting shopping journey for every user.
-              </p>
-              
-              <h3 class="founder-title">Founders</h3>
-              <div class="founder-section">
-                <div class="founder-card">
-                  <img src="./img/others/profile.jfif" alt="Founder JB">
-                  <h4>JB</h4>
-                  <p>"At CozyCoCart, we focus on building simplicity and comfort in every cart, making the shopping process cozy, easy, and enjoyable!"</p>
-                </div>
-                <div class="founder-card">
-                  <img src="./img/others/profile.jfif" alt="Founder Francis">
-                  <h4>Francis</h4>
-                  <p>"For us, 'Cozy' means making every step of shopping comfortable, ensuring seamless experiences from beginning to end!"</p>
-                </div>
-                <div class="founder-card">
-                  <img src="./img/others/profile.jfif" alt="Founder Mai">
-                  <h4>Mai</h4>
-                  <p>"With CozyCoCart, shopping feels like home, bringing warmth and familiarity to every transaction!"</p>
-                </div>
-              </div>
-              <div id="closepopup">
-                <i class="fa-solid fa-xmark close-btn"></i>
-                
-              </div>
-            </div>
-          </div>
-
-            <h2>CozyCoCart</h2>
-    
-          <div class="search">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" class="search-input" placeholder="Search...">
-            <ul class="suggestions"></ul>
-          </div>   
-          
-          <div class="nav-field">
-            <div class="searchi" id="searchi">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <a href="./received-items.html" title="Cart">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            <div class="nav-item" title="Notifications" id="notification">
-              <div class="nav-items">
-                <i class="fa-solid fa-bell"></i>
-                <span class="noti-badge" id="noti-badge"></span>
-              </div>
-              <div class="dropdown-noti" id="dropdown-noti">
-                <h4>Notifications</h4>
-                <hr>
-                <div class="noti" id="noti">
-                  <p>Hey there! We're so glad you're here — welcome to CozyCoCart 🎉</p>
-                </div>
-              </div>
-            </div>
-            <div class="nav-item" title="Profile" id="profiles">
-              <i class="fa-solid fa-circle-user user-profile"></i>
-              <div class="dropdown-profile" id="dropdown-profile">
-                <h4>Profile</h4>
-                <div class="profileNav">
-                  <div id="profile-nav">Profile</div>
-                  <div id="profile-logout">Logout</div>
-                </div>
-              </div>
-            </div>
-          </div>
- 
-          
-        </nav>
-        <div class="topnav" id="myTopnav">
-          <a href="homepage.html">Home</a>
-          <a href="category-page.html?category=men">Men</a>
-          <a href="category-page.html?category=women">Women</a>
-          <div class="dropdown">
-            <button class="dropbtn">Others
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="category-page.html?category=accessories">Accessories</a>
-              <a href="category-page.html?category=hardware">Hardware</a>
-              <a href="category-page.html?category=daily-supplies">Daily Supplies</a>
-              <a href="category-page.html?category=kids">Kidz Zone</a>
-              <a href="category-page.html?category=home">Home & Living</a>
-              <a href="category-page.html?category=sports">Sports</a>
             </div>
           </div>
         </div>
+
+          <h2>CozyCoCart</h2>
+  
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="search-input" placeholder="Search...">
+          <ul class="suggestions"></ul>
+        </div>   
         
-      </header>
+        <div class="nav-field">
+          <div class="searchi" id="searchi">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <a href="./received-items.html" title="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <div class="nav-item" title="Notifications" id="notification">
+            <div class="nav-items">
+              <i class="fa-solid fa-bell"></i>
+              <span class="noti-badge" id="noti-badge"></span>
+            </div>
+            <div class="dropdown-noti" id="dropdown-noti">
+              <h4>Notifications</h4>
+              <hr>
+              <div class="noti" id="noti">
+                <p>Hey there! We're so glad you're here — welcome to CozyCoCart 🎉</p>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item" title="Profile" id="profiles">
+            <i class="fa-solid fa-circle-user user-profile"></i>
+            <div class="dropdown-profile" id="dropdown-profile">
+              <h4>Profile</h4>
+              <div class="profileNav">
+                <div id="nameProfile"></div>
+                <div id="profile-nav">Profile</div>
+                <div id="profile-logout">Logout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </nav>
+      <div class="topnav" id="myTopnav">
+        <a href="homepage.html">Home</a>
+        <a href="category-page.html?category=men">Men</a>
+        <a href="category-page.html?category=women">Women</a>
+        <div class="dropdown">
+          <button class="dropbtn">Others
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="category-page.html?category=accessories">Accessories</a>
+            <a href="category-page.html?category=hardware">Hardware</a>
+            <a href="category-page.html?category=daily-supplies">Daily Supplies</a>
+            <a href="category-page.html?category=kids">Kidz Zone</a>
+            <a href="category-page.html?category=home">Home & Living</a>
+            <a href="category-page.html?category=sports">Sports</a>
+          </div>
+        </div>
+      </div>
+      
+    </header>
       <div class="container">
       <!--BANNER-->
       <div class="banner">

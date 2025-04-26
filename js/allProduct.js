@@ -364,7 +364,8 @@ export function Products() {
             sizes: ["One Size"],
             colors: [
                 { name: "Gray", code: "#808080", img: "../img/accessories/colors/bag-gray.png" },
-                { name: "Black", code: "#000000", img: "../img/accessories/colors/bag-black.png" }
+                { name: "Black", code: "#000000", img: "../img/accessories/colors/bag-black.png" },
+                { name: "Red", code: "#FF0000", img: "../img/accessories/colors/bag-red.png" }
             ],
             comments: [
                 { user: "camile", comment: "Super comfy and stylish!", stars: 4 },
@@ -431,9 +432,9 @@ export function Products() {
             description: "Refreshing soap with a calming scent for everyday use. Leaves skin feeling clean and moisturized. A gentle choice for all skin types.",
             sizes: ["One Size"],
             colors: [
+              { name: "Mint Green", code: "#98FF98", img: "../img/dailysupplies/colors/soap-mintgreen.png" },
               { name: "White", code: "#FFFFFF", img: "../img/dailysupplies/colors/soap-white.png" },
-              { name: "Lavender", code: "#E6E6FA", img: "../img/dailysupplies/colors/soap-lavender.png" },
-              { name: "Mint Green", code: "#98FF98", img: "../img/dailysupplies/colors/soap-mintgreen.png" }
+              { name: "Lavender", code: "#E6E6FA", img: "../img/dailysupplies/colors/soap-lavender.png" }
             ],
             comments: [
                 { user: "user", comment: "Smells amazing and lasts long.", stars: 4 },
@@ -621,9 +622,9 @@ export function Products() {
             features: ["Synthetic Leather", "Durable Stitching", "Indoor/Outdoor Use"],
             sizes: ["Standard"],
             colors: [
+              { name: "Yellow", code: "#FFD700", img: "../img/sports/colors/volleyball-yellow.png" },
               { name: "White", code: "#FFFFFF", img: "../img/sports/colors/volleyball-white.png" },
-              { name: "Blue", code: "#1E90FF", img: "../img/sports/colors/volleyball-blue.png" },
-              { name: "Yellow", code: "#FFD700", img: "../img/sports/colors/volleyball-yellow.png" }
+              { name: "Blue", code: "#1E90FF", img: "../img/sports/colors/volleyball-blue.png" }
             ],
             comments: [
               { user: "ivy", comment: "Super responsive touch and flight!", stars: 5 },
@@ -644,9 +645,9 @@ export function Products() {
             description: "High-quality wooden building blocks to spark creativity and improve motor skills in kids. These blocks help in developing fine motor skills, imagination, and problem-solving. A perfect educational toy to enhance early childhood development.",
             sizes: ["Set of 50", "Set of 100", "Set of 150"],
             colors: [
+              { name: "Green", code: "#008000", img: "../img/kids/colors/blocks-green.png" },              
               { name: "Red", code: "#FF0000", img: "../img/kids/colors/blocks-red.png" },
-              { name: "Blue", code: "#0000FF", img: "../img/kids/colors/blocks-blue.png" },
-              { name: "Green", code: "#008000", img: "../img/kids/colors/blocks-green.png" }              
+              { name: "Blue", code: "#0000FF", img: "../img/kids/colors/blocks-blue.png" }
             ],
             comments: [
               { user: "ian", comment: "Endless fun for my son!", stars: 5 },

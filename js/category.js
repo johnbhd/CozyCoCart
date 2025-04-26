@@ -115,21 +115,24 @@ function getStars(rating) {
     return stars;
 }
 
-function ProductsGet(product) {
-    const productCard = document.createElement("div");
-    productCard.classList.add("product-card");
+    function ProductsGet(product) {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
 
-    const productLink = document.createElement("a");
-    productLink.href = `product-info.html?name=${encodeURIComponent(product.name)}`;
-    productLink.innerHTML = `
-        <img src="${product.img}" alt="${product.name}">
-        <p class="product-name">${product.name}</p>
-        <p class="price">₱ ${product.price}</p>
-        <p class="rating">
-            ${getStars(product.rating)}
-            (${product.sold} sold)
-        </p>
-    `;
+    
+        let colorsImg = product.colors;
+
+        const productLink = document.createElement("a");
+        productLink.href = `product-info.html?name=${encodeURIComponent(product.name)}`;
+        productLink.innerHTML = `
+            <img src="${colorsImg[0].img}" alt="${product.name}">
+            <p class="product-name">${product.name}</p>
+            <p class="price">₱ ${product.price}</p>
+            <p class="rating">
+                ${getStars(product.rating)}
+                (${product.sold} sold)
+            </p>
+        `;
 
     productCard.appendChild(productLink);
     return productCard;

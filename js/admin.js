@@ -12,8 +12,14 @@ const users = JSON.parse(localStorage.getItem('users')) || [];
 const order = JSON.parse(localStorage.getItem('userOrder')) || [];
 
 const productLength = products.reduce((prev, current) => (prev.id > current.id ? prev : current));
+const orderTableBody = document.getElementById('orderTableBody');
 
+let userOrders = {};
+if (Array.isArray(order)) {
+  userOrders = order;
+}
 
+console.log(order);
 logout.addEventListener('click', () => {
     localStorage.removeItem('loggedUsers');
     localStorage.removeItem('currentUserId');
@@ -42,7 +48,7 @@ function populateUserTable() {
             <td>${user.userId || 'N/A'}</td>
             <td>${user.username || 'N/A'}</td>
             <td>${user.email || 'N/A'}</td>
-            <td>₱<input type="number" value="${user.money || '0'}"></td>
+            <td>₱${user.money}</td>
             <td>${user.fullName || 'N/A'}</td>
             <td>${user.contact || 'N/A'}</td>
             <td>${user.address || 'N/A'}</td>
@@ -59,91 +65,161 @@ function populateUserTable() {
       userTableBody.innerHTML = row;
     }
   }
-
   
   function populateOrderTable() {
-    const orderTableBody = document.getElementById('orderTableBody');
+    let ordersSort = order.sort((a, b) => b.orderId - a.orderId);
     if (order.length > 0) {
       orderTableBody.innerHTML = ''; // Clear table content before populating
-      order.forEach((orderItem, index) => {
+      
+      ordersSort.forEach((orderItem, index) => {
+        // 🛠 Build options for each orderItem
+        let optionsHTML = '';
+  
+        if (orderItem.status === '🛒 Order Placed') {
+          optionsHTML = `
+            <option value="⚙️ Processing">⚙️ Processing</option>
+            <option value="🚚 Shipped">🚚 Shipped</option>
+            <option value="📦 Delivered">📦 Delivered</option>
+          `;
+        } else if (orderItem.status === '⚙️ Processing') {
+          optionsHTML = `
+            <option value="🚚 Shipped">🚚 Shipped</option>
+            <option value="📦 Delivered">📦 Delivered</option>
+          `;
+        } else if (orderItem.status === '🚚 Shipped') {
+          optionsHTML = `
+            <option value="📦 Delivered">📦 Delivered</option>
+          `;
+        } else if (orderItem.status === '📦 Delivered') {
+          optionsHTML = `
+            <option disabled>No further actions</option>
+          `;
+        }
+  
         const row = `
-        <tr>
-        <td>${index + 1}</td>
-        <td>${orderItem.orderId || 'N/A'}</td>
-        <td>${orderItem.nameOrder || 'N/A'}</td>
-        <td>${orderItem.sizeOrder || 'N/A'}</td>
-        <td>${orderItem.colorOrder || 'N/A'}</td>
+          <tr id="dataRow" data-index="${index}">
+            <td>${index + 1}</td>
+            <td>${orderItem.orderId || 'N/A'}</td>
+            <td>${orderItem.nameOrder || 'N/A'}</td>
+            <td>${orderItem.sizeOrder || 'N/A'}</td>
+            <td>${orderItem.colorOrder || 'N/A'}</td>
             <td>${orderItem.quantityOrder || 0}</td>
             <td>₱ ${orderItem.totalPrice || '₱0'}</td>
-            <td>${orderItem.paymentMethod || '₱0'}</td>
+            <td>${orderItem.paymentMethod || 'N/A'}</td>
             <td>
-            <select onchange="updateOrderStatus(${index}, this.value)">
-            <option value="🛒 Order Placed" ${orderItem.status === '🛒 Order Placed' ? 'selected' : ''}>🛒 Order Placed</option>
-            <option value="⚙️ Processing" ${orderItem.status === 'Shipped' ? 'selected' : ''}>Shipped</option>
-            <option value="🚚 Shipped" ${orderItem.status === '🚚 Shipped' ? 'selected' : ''}>🚚 Shipped</option>
-            <option value="📦 Delivered" ${orderItem.status === '📦 Delivered' ? 'selected' : ''}>📦 Delivered</option>
-            </select>
+              <select class="statusOrder">
+                <option disabled selected>${orderItem.status || 'N/A'}</option>
+                ${optionsHTML}
+              </select>
             </td>
-            </tr>
-            `;
-            orderTableBody.innerHTML += row;
-          });
-        } else {
-          const row = `
-          <tr>
-          <td colspan="9">No orders found.</td>
+
+            <td><button class="updateOrder">Update</button></td>
           </tr>
-          `;
-          orderTableBody.innerHTML = row;
-        }
-      }
-      /*
-      function updateOrderStatus(index, newStatus) {
-        let order = JSON.parse(localStorage.getItem('userOrder')) || []; // Re-fetch orders from localStorage
-        
-        if (order[index]) {
-      order[index].status = newStatus;  // Update the order status
-      localStorage.setItem('userOrder', JSON.stringify(order)); // Save the updated order back to localStorage
-      console.log(`Order ${order[index].orderId} status updated to ${newStatus}`); // Log after update
-      
-      populateOrderTable(); // Re-render the table after updating the status
-      } else {
-        console.error(`Order at index ${index} not found.`);
-    }
-    }
-    */
-
-
-  function ProductAll() {
-    const productdivall = document.getElementById('productAll')
-    products.forEach(product => {
-      productdivall.innerHTML += `
+        `;
   
-  <tr>
-    <td>${product.id}</td>
-    <td><img src="${product.img}" alt="${product.name}" width="60"></td>
-    <td>${product.name}</td>
-    <td>${product.category}</td>
-    <td>${product.rating}</td>
-    <td>${product.sold}</td>
-    <td>
-      <select>
-        ${product.colors.map(color => `<option value="${color.name}">${color.name}</option>`).join('')}
-      </select>
-    </td>
-    <td>
-      <select>
-        ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
-      </select>
-    </td>
-    <td>₱${product.price}</td>
-    <td>${product.comments.length}</td>
-  </tr>
-
+        orderTableBody.innerHTML += row;
+      });
+  
+    } else {
+      const row = `
+        <tr>
+          <td colspan="11">No orders found.</td>
+        </tr>
       `;
-    });
+      orderTableBody.innerHTML = row;
+    }
   }
-populateUserTable();
-populateOrderTable();
-ProductAll();
+  
    
+    
+  orderTableBody.addEventListener('click', (e) => {
+    const row = e.target.closest("tr");
+    const index = row.dataset.index;
+
+    if (e.target.classList.contains('updateOrder')) {
+      updateOrder(row, index);
+    }
+  });
+  function updateOrder(row, index) {
+    const storedNotifications = JSON.parse(localStorage.getItem('Notifications')) || [];
+
+    let notifi = storedNotifications; 
+
+    const statusSelector = row.querySelector('.statusOrder');
+    const newStatus = statusSelector.value;
+    
+    order[index].status = newStatus;
+    
+    const notificationMessage = `🛍️ The status of your order for ${order[index].nameOrder} has been updated to "${newStatus}".`;
+
+    notifi.push({
+      message: notificationMessage,
+      timestamp: new Date().toString(),
+      user: order[index].orderId 
+    });
+    
+    localStorage.setItem('userOrder', JSON.stringify(order));
+    localStorage.setItem('Notifications', JSON.stringify(notifi));
+    alert('Order status updated!');
+    location.reload();
+  }
+
+    function ProductAll(filteredProducts = products) {
+      const productdivall = document.getElementById('productAll')
+      productdivall.innerHTML = '';
+
+      filteredProducts.forEach(product => {
+        productdivall.innerHTML += `
+    
+    <tr>
+      <td>${product.id}</td>
+      <td><img src="${product.img}" alt="${product.name}" width="60"></td>
+      <td>${product.name}</td>
+      <td>${product.category}</td>
+      <td>${product.rating}</td>
+      <td>${product.sold}</td>
+      <td>
+        <select>
+          ${product.colors.map(color => `<option value="${color.name}">${color.name}</option>`).join('')}
+        </select>
+      </td>
+      <td>
+        <select>
+          ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+        </select>
+      </td>
+      <td>₱${product.price}</td>
+      <td>${product.comments.length}</td>
+    </tr>
+
+        `;
+      });
+    }
+
+    function filterSort() {
+      const sortOrder = document.getElementById('sortOrder').value;
+      const filterCategory = document.getElementById('filterCategory').value;
+
+      let filteredProduct = [...products];
+
+      if (filterCategory !== "all") {
+        filteredProduct = filteredProduct.filter(prod => prod.category == filterCategory);
+      }
+
+      filteredProduct.sort((a, b) => {
+        if (sortOrder === 'asc') {
+          return a.id - b.id;
+        } else {
+          return b.id - a.id;
+        }
+      });
+      ProductAll(filteredProduct);
+
+    }
+
+    document.getElementById('sortOrder').addEventListener('change', filterSort);
+    document.getElementById('filterCategory').addEventListener('change', filterSort);
+  populateUserTable();
+  populateOrderTable();
+  ProductAll();
+    

@@ -39,11 +39,11 @@ function getStars(rating) {
 function ProductsGet(product) {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
-    
+    let colorsImg = product.colors;
     const productLink = document.createElement("a");
         productLink.href = `product-info.html?name=${encodeURIComponent(product.name)}`;
         productLink.innerHTML = `
-        <img src="${product.img}" alt="${product.name}">
+         <img src="${colorsImg[0].img}" alt="${product.name}">
         <p class="product-name">${product.name}</p>
         <p class="price">₱ ${product.price}</p>
         <p class="rating">

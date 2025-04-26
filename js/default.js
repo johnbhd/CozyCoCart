@@ -29,6 +29,11 @@ const noti = document.getElementById('noti');
 const notiBadge = document.getElementById('noti-badge');
 const profilenav = document.getElementById('profile-nav');
 
+const nameProfile = document.getElementById('nameProfile');
+
+console.log(usersSession.email)
+nameProfile.textContent = usersSession.email;
+
 profilenav.addEventListener('click', () => {
   window.location.href = './received-items.html?page=Profile';
 });

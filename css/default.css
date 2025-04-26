@@ -566,6 +566,9 @@ footer #info {
     position: relative;
     top: 1.5vh;
   }
+  #coTitle {
+    top: 0;
+  }
 }
 @media screen and (max-width: 480px) {
   .topnav.responsive {
