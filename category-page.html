@@ -9,7 +9,8 @@
     <meta name="description" content="Browse CozyCoCart product categories including men’s fashion, women’s wear, accessories, and home living. Discover your cozy shopping style.">
     <meta name="keywords" content="shop by category, men fashion, women fashion, accessories, home living, cozy shopping, CozyCoCart">
     <meta name="author" content="CozyCoCart Team">
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cozycocart.vercel.app/category-page.html">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Shop by Category - CozyCoCart">
@@ -36,22 +37,27 @@
       <!-- Structured Data (JSON-LD) for Category Page -->
       <script type="application/ld+json">
         {
-          "@context": "https://schema.org/",
-          "@type": "WebPage",
-          "name": "Shop by Category - CozyCoCart",
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "CozyCoCart - Categories",
           "url": "https://cozycocart.vercel.app/category-page.html",
-          "description": "Browse CozyCoCart product categories including men’s fashion, women’s wear, accessories, and home living. Discover your cozy shopping style.",
-          "mainEntityOfPage": "https://schema.org/WebPage",
-          "publisher": {
+          "description": "Browse product categories tailored for your cozy shopping experience at CozyCoCart.",
+          "applicationCategory": "Shopping",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript",
+          "author": {
             "@type": "Organization",
-            "name": "CozyCoCart",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://cozycocart.vercel.app/img/logo.jpg"
-            }
+            "name": "CozyCoCart Team",
+            "url": "https://cozycocart.vercel.app"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
           }
         }
         </script>
+        
   </head>
 
   <body>
@@ -340,7 +346,11 @@
         </div>
         <p>Secure Payments</p>
       </div>
-      <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
+      <p class="copyright">
+        &copy; 2025 
+        <a href="https://github.com/johnbhd/CozyCoCart" style="text-decoration: none; color: black;" target="_blank"><u>CozyCoCart</u> </a>. All rights reserved.
+      </p>
+      
     </footer>
   </body>
   <script src="./js/nav-banner.js"></script>

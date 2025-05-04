@@ -32,12 +32,12 @@
       <priority>0.8</priority>
    </url>
 
-   <!-- Homepage -->
+   <!-- Homepage (Duplicate if needed, or just use index.html above) -->
    <url>
       <loc>https://cozycocart.vercel.app/homepage.html</loc>
       <lastmod>2025-04-20</lastmod>
       <changefreq>daily</changefreq>
-      <priority>1.0</priority>
+      <priority>0.8</priority>
    </url>
 
    <!-- Product Info Page -->

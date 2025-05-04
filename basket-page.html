@@ -9,7 +9,8 @@
   <meta name="description" content="Review your items and checkout on CozyCoCart. View your cart with selected products, prices, and quantities.">
   <meta name="keywords" content="shopping cart, CozyCoCart cart, checkout page, basket items, online shopping, cozy clothing cart, purchase items">
   <meta name="author" content="CozyCoCart Team">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cozycocart.vercel.app/basket-page.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Your Basket - CozyCoCart">
@@ -32,22 +33,27 @@
    <!-- Structured Data (JSON-LD) for Basket Page -->
    <script type="application/ld+json">
     {
-      "@context": "https://schema.org/",
-      "@type": "WebPage",
-      "name": "Payment Page - CozyCoCart",
-      "url": "https://cozycocart.vercel.app/basket.html",
-      "description": "Review your shopping basket and checkout for cozy fashion and lifestyle essentials at CozyCoCart.",
-      "mainEntityOfPage": "https://schema.org/WebPage",
-      "publisher": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CozyCoCart - Shopping Basket",
+      "url": "https://cozycocart.vercel.app/basket-page.html",
+      "description": "View and manage items in your CozyCoCart shopping basket before checkout.",
+      "applicationCategory": "Shopping",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "author": {
         "@type": "Organization",
-        "name": "CozyCoCart",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://cozycocart.vercel.app/img/logo.jpg"
-        }
+        "name": "CozyCoCart Team",
+        "url": "https://cozycocart.vercel.app"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
     }
     </script>
+    
 </head>
 <style>
 
@@ -323,7 +329,11 @@
           </div>
           <p>Secure Payments</p>
       </div>
-      <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
+      <p class="copyright">
+        &copy; 2025 
+        <a href="https://github.com/johnbhd/CozyCoCart" style="text-decoration: none; color: black;" target="_blank"><u>CozyCoCart</u> </a>. All rights reserved.
+      </p>
+      
   </footer>
 </body>
 

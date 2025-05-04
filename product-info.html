@@ -9,7 +9,8 @@
   <meta name="description" content="View product details at CozyCoCart. Check pricing, availability, sizes, and features of our cozy fashion and lifestyle products.">
   <meta name="keywords" content="product details, CozyCoCart products, fashion product info, shop online, cozy clothing, cozy accessories, home living items">
   <meta name="author" content="CozyCoCart Team">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cozycocart.vercel.app/product-info.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Product Details - CozyCoCart">
@@ -32,26 +33,27 @@
     <!-- Structured Data (JSON-LD) for Product Details -->
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": "Cozy Hoodie",
-        "image": [
-          "https://cozycocart.vercel.app/img/hoodie.jpg"
-        ],
-        "description": "A soft, cozy hoodie perfect for any season.",
-        "brand": {
-          "@type": "Brand",
-          "name": "CozyCoCart"
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CozyCoCart - Product Info",
+        "url": "https://cozycocart.vercel.app/product-info.html",
+        "description": "Get detailed product information, features, and reviews before purchasing at CozyCoCart.",
+        "applicationCategory": "Shopping",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "author": {
+          "@type": "Organization",
+          "name": "CozyCoCart Team",
+          "url": "https://cozycocart.vercel.app"
         },
         "offers": {
           "@type": "Offer",
-          "url": "https://cozycocart.vercel.app/product-info.html",
-          "priceCurrency": "PHP",
-          "price": "999.00",
-          "availability": "https://schema.org/InStock"
+          "price": "0",
+          "priceCurrency": "USD"
         }
       }
       </script>
+      
 </head>
 <style>
 
@@ -326,7 +328,11 @@
           </div>
           <p>Secure Payments</p>
       </div>
-      <p class="copyright">&copy; 2025 CozyCoCart. All rights reserved.</p>
+      <p class="copyright">
+        &copy; 2025 
+        <a href="https://github.com/johnbhd/CozyCoCart" style="text-decoration: none; color: black;" target="_blank"><u>CozyCoCart</u> </a>. All rights reserved.
+      </p>
+      
   </footer>
 </body>
 <script type="module" src="./js/SelectOrder.js"></script>
